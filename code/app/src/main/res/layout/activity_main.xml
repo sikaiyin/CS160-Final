@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/weeklabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="150dp"
+        android:text="Week:"
+        app:layout_constraintStart_toEndOf="@+id/month"
+        app:layout_constraintTop_toBottomOf="@+id/mylearnings" />
+
+    <TextView
+        android:id="@+id/termlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="150dp"
+        android:text="Term:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myspendings" />
+
+    <TextView
+        android:id="@+id/term"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="150dp"
+        android:text="Fall"
+        app:layout_constraintStart_toEndOf="@+id/termlabel"
+        app:layout_constraintTop_toBottomOf="@+id/myspendings" />
+
+    <TextView
+        android:id="@+id/monthlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="29dp"
+        android:text="Month:"
+        app:layout_constraintStart_toEndOf="@+id/term"
+        app:layout_constraintTop_toBottomOf="@+id/userpicture" />
+
+    <TextView
+        android:id="@+id/week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="150dp"
+        android:text="1 of 4"
+        app:layout_constraintStart_toEndOf="@+id/weeklabel"
+        app:layout_constraintTop_toBottomOf="@+id/mylearnings" />
+
+    <TextView
+        android:id="@+id/month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="29dp"
+        android:text="2 of 4"
+        app:layout_constraintStart_toEndOf="@+id/monthlabel"
+        app:layout_constraintTop_toBottomOf="@+id/userpicture" />
+
+    <ImageButton
+        android:id="@+id/mylearnings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userpicture"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="45dp"
+        android:text="User Name"
+        app:layout_constraintEnd_toStartOf="@+id/mylearnings"
+        app:layout_constraintStart_toEndOf="@+id/myspendings"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/myspendings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toStartOf="@+id/userpicture"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageView
+        android:id="@+id/userpicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/yearofstudy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="185dp"
+        android:layout_marginTop="25dp"
+        android:text="Junior"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monthlabel" />
+
+    <ProgressBar
+        android:id="@+id/pbbudget"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="31dp"
+        android:indeterminateTint="@android:color/holo_orange_dark"
+        android:max="100"
+        android:progress="50"
+        app:layout_constraintStart_toEndOf="@+id/ivbudget"
+        app:layout_constraintTop_toBottomOf="@+id/yearofstudy" />
+
+    <ImageView
+        android:id="@+id/iventertain"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivhealth"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ProgressBar
+        android:id="@+id/pbentertain"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        android:indeterminateTint="@android:color/holo_orange_dark"
+        android:max="100"
+        android:progress="50"
+        app:layout_constraintStart_toEndOf="@+id/iventertain"
+        app:layout_constraintTop_toBottomOf="@+id/pbhealth" />
+
+    <ImageView
+        android:id="@+id/ivhealth"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivsocial"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ProgressBar
+        android:id="@+id/pbhealth"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="43dp"
+        android:indeterminateTint="@android:color/holo_orange_dark"
+        android:max="100"
+        android:progress="50"
+        app:layout_constraintStart_toEndOf="@+id/ivhealth"
+        app:layout_constraintTop_toBottomOf="@+id/pbsocial" />
+
+    <ImageView
+        android:id="@+id/ivsocial"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivacademic"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ProgressBar
+        android:id="@+id/pbsocial"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        android:indeterminateTint="@android:color/holo_orange_dark"
+        android:max="100"
+        android:progress="50"
+        app:layout_constraintStart_toEndOf="@+id/ivsocial"
+        app:layout_constraintTop_toBottomOf="@+id/pbacademic" />
+
+    <ImageView
+        android:id="@+id/ivacademic"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivbudget"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ProgressBar
+        android:id="@+id/pbacademic"
+        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        android:indeterminateTint="@android:color/holo_orange_dark"
+        android:max="100"
+        android:progress="50"
+        app:layout_constraintStart_toEndOf="@+id/ivacademic"
+        app:layout_constraintTop_toBottomOf="@+id/pbbudget" />
+
+    <ImageView
+        android:id="@+id/ivbudget"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="57dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/termlabel"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+
+    <Button
+        android:id="@+id/performtask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="28dp"
+        android:text="Perform Task"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pbentertain" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
