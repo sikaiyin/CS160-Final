@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sparechange">
+    package="com.example.cs160final">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -9,18 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TasksOptionsActivity"/>
-        <activity android:name=".LearningScreenActivity"/>
-        <activity android:name=".TaskScreenActivity"/>
-        <activity android:name=".MySpendingsActivity"/>
-        <activity android:name=".MyLearningsActivity"/>
+        <activity android:name=".registeration"/>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".MyLearningsActivity" />
+        <activity android:name=".MySpendingsActivity" />
+        <activity android:name=".TaskScreenActivity" />
+        <activity android:name=".TasksOptionsActivity" />
     </application>
 
 </manifest>

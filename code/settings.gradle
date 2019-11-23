@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='sparechange'
+rootProject.name='cs160final'
