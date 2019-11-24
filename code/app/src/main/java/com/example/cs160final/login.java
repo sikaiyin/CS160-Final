@@ -4,11 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,7 +40,14 @@ public class login extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
 
         if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            if(getIntent().hasExtra("ImagebyteArray")) {
+                intent.putExtra("PhotobyteArray", getIntent().getByteArrayExtra("ImagebyteArray"));
+            }
+            if(getIntent().hasExtra("User")) {
+                intent.putExtra("UserName", getIntent().getStringExtra("User"));
+            }
+            startActivity(intent);
             finish();
         }
 
@@ -67,7 +77,14 @@ public class login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(login.this, "Sign In Successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+                            if(getIntent().hasExtra("ImagebyteArray")) {
+                                intent2.putExtra("PhotobyteArray", getIntent().getByteArrayExtra("ImagebyteArray"));
+                            }
+                            if(getIntent().hasExtra("User")) {
+                                intent2.putExtra("UserName", getIntent().getStringExtra("User"));
+                            }
+                            startActivity(intent2);
                         }else{
                             Toast.makeText(login.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -80,7 +97,8 @@ public class login extends AppCompatActivity {
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), registeration.class));
+                Intent intent = new Intent(getApplicationContext(), registeration.class);
+                startActivity(intent);
             }
         });
     }

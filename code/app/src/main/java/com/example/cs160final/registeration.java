@@ -145,7 +145,10 @@ public class registeration extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(registeration.this, "User Created", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), login.class));
+                            Intent intent = new Intent(getApplicationContext(), login.class);
+                            intent.putExtra("ImagebyteArray", bs.toByteArray());
+                            intent.putExtra("User", mName.getText().toString().trim());
+                            startActivity(intent);
                         }else{
                             Toast.makeText(registeration.this, "Registeration Failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show(); }
                     }

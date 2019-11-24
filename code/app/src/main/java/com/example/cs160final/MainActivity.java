@@ -3,6 +3,8 @@ package com.example.cs160final;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -66,6 +68,17 @@ public class MainActivity extends AppCompatActivity {
         iventertain = (ImageView)findViewById(R.id.iventertain);
         pbentertain = (ProgressBar)findViewById(R.id.pbentertain);
         performtask = (Button)findViewById(R.id.performtask);
+
+        if(getIntent().hasExtra("PhotobyteArray")) {
+            Bitmap bitmap = BitmapFactory.decodeByteArray(
+                    getIntent().getByteArrayExtra("PhotobyteArray"), 0, getIntent().getByteArrayExtra("PhotobyteArray").length);
+            userpicture.setImageBitmap(bitmap);
+        }
+
+        if(getIntent().hasExtra("UserName")) {
+            String name = getIntent().getStringExtra("UserName");
+            username.setText(name);
+        }
     }
     @Override
     protected void onStart()
