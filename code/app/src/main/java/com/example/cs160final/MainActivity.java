@@ -39,16 +39,16 @@ import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton myspendings;
+    Button myspendings;
     TextView username;
-    ImageButton mylearnings;
+    Button mylearnings;
     ImageView userpicture;
     TextView termlabel;
     TextView term;
     TextView monthlabel;
-    TextView month;
+    ImageView month;
     TextView weeklabel;
-    TextView week;
+    ImageView week;
     TextView yearofstudy;
     ImageView ivbudget;
     ProgressBar pbbudget;
@@ -73,16 +73,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        myspendings = (ImageButton)findViewById(R.id.myspendings);
+        myspendings = (Button)findViewById(R.id.myspendings);
         username = (TextView)findViewById(R.id.username);
-        mylearnings = (ImageButton)findViewById(R.id.mylearnings);
+        mylearnings = (Button)findViewById(R.id.mylearnings);
         userpicture = (ImageView)findViewById(R.id.userpicture);
         termlabel = (TextView)findViewById(R.id.termlabel);
         term = (TextView)findViewById(R.id.term);
         monthlabel = (TextView)findViewById(R.id.monthlabel);
-        month = (TextView)findViewById(R.id.month);
+        month = (ImageView)findViewById(R.id.month);
         weeklabel = (TextView)findViewById(R.id.weeklabel);
-        week = (TextView)findViewById(R.id.week);
+        week = (ImageView) findViewById(R.id.week);
         yearofstudy = (TextView)findViewById(R.id.yearofstudy);
         ivbudget = (ImageView)findViewById(R.id.ivbudget);
         pbbudget = (ProgressBar)findViewById(R.id.pbbudget);
