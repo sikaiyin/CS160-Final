@@ -1,10 +1,12 @@
 package com.example.cs160final;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,8 +14,28 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
     ImageView iventertain;
     ProgressBar pbentertain;
     Button performtask;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    String userId;
+    private DatabaseReference mDatabaseRef;
+    private StorageReference mStorageRef;
 
 
     @Override
@@ -69,16 +96,29 @@ public class MainActivity extends AppCompatActivity {
         pbentertain = (ProgressBar)findViewById(R.id.pbentertain);
         performtask = (Button)findViewById(R.id.performtask);
 
-        if(getIntent().hasExtra("PhotobyteArray")) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(
-                    getIntent().getByteArrayExtra("PhotobyteArray"), 0, getIntent().getByteArrayExtra("PhotobyteArray").length);
-            userpicture.setImageBitmap(bitmap);
-        }
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        userId = fAuth.getCurrentUser().getUid();
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("user_profile");
+        mStorageRef = FirebaseStorage.getInstance().getReference("user_profile");
 
-        if(getIntent().hasExtra("UserName")) {
-            String name = getIntent().getStringExtra("UserName");
-            username.setText(name);
-        }
+
+        mStorageRef.child(userId + "." + "jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).into(userpicture);
+                Toast.makeText(MainActivity.this, "Fetched Success", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        final DocumentReference documentReference = fStore.collection("users").document(userId);
+        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                username.setText(documentSnapshot.getString("fName"));
+            }
+        });
+
     }
     @Override
     protected void onStart()
@@ -99,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         performtask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TasksOptionsActivity.class);
+                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
                 startActivity(intent);
             }
         });

@@ -24,6 +24,8 @@
         <activity android:name=".MySpendingsActivity" />
         <activity android:name=".TaskScreenActivity" />
         <activity android:name=".TasksOptionsActivity" />
+        <activity android:name=".CategoryActivity"/>
+        <activity android:name=".LearningScreenActivity"/>
     </application>
 
 </manifest>
