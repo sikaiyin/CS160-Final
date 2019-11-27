@@ -48,7 +48,7 @@ import java.util.Map;
 
 public class registeration extends AppCompatActivity {
     public static final String TAG = "TAG";
-    EditText mName, mEmail, mPassword, mRePassword;
+    EditText mName, mEmail, mPassword, mRePassword, mGrade;
     Button mRegisterBtn;
     ImageButton mEditBtn;
     FirebaseAuth fAuth;
@@ -101,6 +101,7 @@ public class registeration extends AppCompatActivity {
         mEmail = findViewById(R.id.editTextEmail);
         mPassword = findViewById(R.id.editTextPassword);
         mRePassword = findViewById(R.id.editTextRepa);
+        mGrade = findViewById(R.id.editTextGrade);
         mRegisterBtn = findViewById(R.id.button_register);
         mEditBtn = findViewById(R.id.editButton);
         mProfile = findViewById(R.id.imageView_profile);
@@ -145,6 +146,7 @@ public class registeration extends AppCompatActivity {
                 String password = mPassword.getText().toString().trim();
                 String reenter = mRePassword.getText().toString().trim();
                 final String name = mName.getText().toString();
+                final String grade = mGrade.getText().toString();
 
 
                 if(TextUtils.isEmpty(email)){
@@ -180,6 +182,7 @@ public class registeration extends AppCompatActivity {
                             Map<String, Object> user = new HashMap<>();
                             user.put("fName", name);
                             user.put("fEmail", email);
+                            user.put("fGrade", grade);
                             if(mUploadTask != null && mUploadTask.isInProgress()){
                                 Toast.makeText(registeration.this, "Upload In Progress", Toast.LENGTH_SHORT).show();
                             }else{
