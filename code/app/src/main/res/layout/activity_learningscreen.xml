@@ -4,36 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mainColor"
     tools:context=".MainActivity">
 
+
+<!--    <TextView-->
+<!--        android:id="@+id/learninglabel"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="80dp"-->
+<!--        android:layout_marginTop="44dp"-->
+<!--        android:text="Learnings"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/home"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/home"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginStart="30dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:background="#666666"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tasklabel"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="100dp"-->
+<!--        android:layout_marginTop="27dp"-->
+<!--        android:text="Buying Textbooks"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/learninglabel" />-->
 
     <TextView
         android:id="@+id/learninglabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:text="Learnings"
-        app:layout_constraintStart_toEndOf="@+id/home"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/home"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="16dp"
-        android:background="#666666"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/home"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:background="#00666666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_home_button_white_40dp"/>
+
     <TextView
-        android:id="@+id/tasklabel"
+        android:id="@+id/explanation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="27dp"
-        android:text="Buying Textbooks"
+        android:layout_marginTop="0dp"
+        android:text="Key takeaways about buying textbooks."
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/learninglabel" />
 
@@ -41,9 +76,10 @@
         android:id="@+id/learning1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
         android:layout_marginTop="200dp"
-        android:text="Learning1"
+        android:text="Always check online
+for PDFs, but having a physical copy is highly recommended."
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,9 +87,9 @@
         android:id="@+id/learning2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
         android:layout_marginTop="30dp"
-        android:text="Learning2"
+        android:text="Ask friends who have already taken the same course."
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/learning1" />
 
@@ -61,11 +97,21 @@
         android:id="@+id/learning3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
         android:layout_marginTop="37dp"
-        android:text="Learning3"
+        android:text="Lastly, get them on Amazon, Facebook marketplace or any other book store."
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/learning2" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/explanation" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

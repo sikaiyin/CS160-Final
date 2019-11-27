@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="120dp"
+        android:layout_marginStart="110dp"
         android:text="Term:"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,12 +22,12 @@
         android:id="@+id/term"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="5dp"
         android:text="Fall"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/termlabel"
         app:layout_constraintStart_toEndOf="@+id/termlabel"
-        app:layout_constraintTop_toBottomOf="@+id/userpicture" />
+        app:layout_constraintTop_toTopOf="@+id/termlabel" />
 
     <!--    <androidx.appcompat.widget.AppCompatImageButton-->
     <!--        android:id="@+id/mylearnings"-->
@@ -91,15 +91,26 @@
         app:srcCompat="@drawable/user" />
 
     <TextView
-        android:id="@+id/yearofstudy"
+        android:id="@+id/yearlabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginStart="30dp"
-        android:text="Junior"
+        android:text="Year:"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/term"
         app:layout_constraintTop_toBottomOf="@+id/userpicture" />
+
+    <TextView
+        android:id="@+id/yearofstudy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Junior"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/yearlabel"
+        app:layout_constraintStart_toEndOf="@+id/yearlabel"
+        app:layout_constraintTop_toTopOf="@+id/yearlabel" />
 
     <ProgressBar
         android:id="@+id/pbbudget"
@@ -107,7 +118,7 @@
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="21dp"
         android:indeterminateTint="@android:color/holo_orange_dark"
         android:max="100"
         android:progress="50"
@@ -130,9 +141,9 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pbentertain"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivhealth"
+        app:layout_constraintTop_toTopOf="@+id/pbentertain"
         app:srcCompat="@drawable/ic_hobbies_35dp" />
 
     <ProgressBar
@@ -164,9 +175,9 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pbhealth"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivsocial"
+        app:layout_constraintTop_toTopOf="@+id/pbhealth"
         app:srcCompat="@drawable/ic_health_35dp" />
 
     <ProgressBar
@@ -198,9 +209,9 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pbsocial"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivacademic"
+        app:layout_constraintTop_toTopOf="@+id/pbsocial"
         app:srcCompat="@drawable/ic_social_life_35dp" />
 
     <ProgressBar
@@ -232,9 +243,9 @@
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pbacademic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivbudget"
+        app:layout_constraintTop_toTopOf="@+id/pbacademic"
         app:srcCompat="@drawable/ic_academics_35dp" />
 
     <ProgressBar
@@ -265,10 +276,10 @@
         android:id="@+id/ivbudget"
         android:layout_width="40dp"
         android:layout_height="35dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pbbudget"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/termlabel"
+        app:layout_constraintTop_toTopOf="@+id/pbbudget"
         app:srcCompat="@drawable/ic_bugget_35dp" />
 
 
@@ -276,9 +287,9 @@
         android:id="@+id/performtask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="142dp"
         android:layout_marginTop="28dp"
         android:text="Perform Task"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pbentertain" />
 
