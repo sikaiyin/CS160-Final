@@ -16,7 +16,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -107,15 +109,25 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(Uri uri) {
                 Picasso.get().load(uri).into(userpicture);
-                Toast.makeText(MainActivity.this, "Fetched Success", Toast.LENGTH_SHORT).show();
             }
         });
 
         final DocumentReference documentReference = fStore.collection("users").document(userId);
-        documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
+        documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
-            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                username.setText(documentSnapshot.getString("fName"));
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()){
+                    DocumentSnapshot document = task.getResult();
+                    if(document.exists()){
+                        username.setText(document.get("fName").toString());
+                        term.setText(document.get("fWeek").toString());
+                        pbbudget.setProgress(Integer.parseInt(document.get("fBudget").toString()));
+                        pbacademic.setProgress(Integer.parseInt(document.get("fAcademics").toString()));
+                        pbsocial.setProgress(Integer.parseInt(document.get("fSocial").toString()));
+                        pbhealth.setProgress(Integer.parseInt(document.get("fHealth").toString()));
+                        pbentertain.setProgress(Integer.parseInt(document.get("fHobbies").toString()));
+                    }
+                }
             }
         });
 
@@ -136,6 +148,8 @@ public class MainActivity extends AppCompatActivity {
         // progressbar.getProgressDrawable().setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
         // to change the color of the bar
 
+
+
         performtask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -148,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, com.example.cs160final.MySpendingsActivity.class);
                 startActivity(intent);
+
             }
         });
         mylearnings.setOnClickListener(new View.OnClickListener() {
@@ -155,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, com.example.cs160final.MyLearningsActivity.class);
                 startActivity(intent);
+
             }
         });
     }

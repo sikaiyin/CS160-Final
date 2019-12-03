@@ -183,6 +183,12 @@ public class registeration extends AppCompatActivity {
                             user.put("fName", name);
                             user.put("fEmail", email);
                             user.put("fGrade", grade);
+                            user.put("fWeek", "1");
+                            user.put("fBudget", "100");
+                            user.put("fAcademics", "50");
+                            user.put("fSocial", "50");
+                            user.put("fHealth", "50");
+                            user.put("fHobbies", "50");
                             if(mUploadTask != null && mUploadTask.isInProgress()){
                                 Toast.makeText(registeration.this, "Upload In Progress", Toast.LENGTH_SHORT).show();
                             }else{
