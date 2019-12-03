@@ -38,13 +38,9 @@ public class CategoryActivity extends AppCompatActivity {
 
         home = (ImageButton)findViewById(R.id.home);
         taskcategory1 = (ImageButton)findViewById(R.id.taskcategory1);
-        taskcategory2 = (ImageButton)findViewById(R.id.taskcategory2);
+//        taskcategory2 = (ImageButton)findViewById(R.id.taskcategory2);
         taskcategory3 = (ImageButton)findViewById(R.id.taskcategory3);
         taskcategory4 = (ImageButton)findViewById(R.id.taskcategory4);
-        taskcategory5 = (ImageButton)findViewById(R.id.taskcategory5);
-        taskcategory6 = (ImageButton)findViewById(R.id.taskcategory6);
-        taskcategory7 = (ImageButton)findViewById(R.id.taskcategory7);
-        taskcategory8 = (ImageButton)findViewById(R.id.taskcategory8);
 //        task1 = (ImageButton)findViewById(R.id.task1);
         tasklabel = (TextView)findViewById(R.id.tasklabel);
         note = (TextView)findViewById(R.id.note);
