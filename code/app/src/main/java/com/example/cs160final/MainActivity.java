@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                     if(document.exists()){
                         username.setText(document.get("fName").toString());
                         term.setText(document.get("fWeek").toString());
-                        pbbudget.setProgress(Integer.parseInt(document.get("fBudget").toString()));
+                        pbbudget.setProgress((int)(Integer.parseInt(document.get("fBudget").toString()) / 10));
                         pbacademic.setProgress(Integer.parseInt(document.get("fAcademics").toString()));
                         pbsocial.setProgress(Integer.parseInt(document.get("fSocial").toString()));
                         pbhealth.setProgress(Integer.parseInt(document.get("fHealth").toString()));

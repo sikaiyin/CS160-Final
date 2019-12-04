@@ -184,7 +184,7 @@ public class registeration extends AppCompatActivity {
                             user.put("fEmail", email);
                             user.put("fGrade", grade);
                             user.put("fWeek", "1");
-                            user.put("fBudget", "100");
+                            user.put("fBudget", "1000");
                             user.put("fAcademics", "50");
                             user.put("fSocial", "50");
                             user.put("fHealth", "50");
