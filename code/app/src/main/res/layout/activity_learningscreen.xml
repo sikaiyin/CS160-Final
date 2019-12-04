@@ -44,22 +44,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Learnings"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/home"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:background="#00666666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_home_button_white_40dp"/>
+    <!--    <androidx.appcompat.widget.AppCompatImageButton-->
+    <!--        android:id="@+id/home"-->
+    <!--        android:layout_width="40dp"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        android:layout_marginStart="5dp"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        android:background="@android:color/transparent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:srcCompat="@drawable/ic_home_button_white_40dp"/>-->
 
     <TextView
         android:id="@+id/explanation"
@@ -68,15 +68,16 @@
         android:layout_marginTop="0dp"
         android:text="Key takeaways about buying textbooks."
         android:textSize="16sp"
+        android:textColor="@color/darkGray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/learninglabel" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageRectangle1"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:background="@color/mainColorTransparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,15 +85,14 @@
         app:layout_constraintTop_toBottomOf="@+id/explanation" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/imageIcon1"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/imageRectangle1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_hacker"
-        android:tag="ic_hacker"/>
+        app:srcCompat="@drawable/ic_hacker" />
 
     <TextView
         android:id="@+id/learning1"
@@ -100,84 +100,81 @@
         android:layout_height="wrap_content"
         android:text="Always check online for PDFs, but having a physical copy is highly recommended."
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageRectangle1"
+        app:layout_constraintEnd_toEndOf="@+id/imageRectangle1"
+        app:layout_constraintStart_toEndOf="@+id/imageBullet1"
+        app:layout_constraintTop_toTopOf="@+id/imageRectangle1" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageBullet1"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/imageRectangle1"
+        app:layout_constraintStart_toStartOf="@+id/imageRectangle1"
+        app:layout_constraintTop_toTopOf="@+id/imageRectangle1"
         app:srcCompat="@drawable/ic_learningpoint_1" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageRectangle2"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="@color/mainColorTransparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@id/imageRectangle1" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/imageIcon2"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintBottom_toBottomOf="@+id/imageRectangle2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_super_friend"
-        android:tag="ic_super_friend"/>
+        app:srcCompat="@drawable/ic_super_friend" />
 
     <TextView
         android:id="@+id/learning2"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:textSize="18sp"
         android:text="Ask friends who have already taken the same course."
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageRectangle2"
+        app:layout_constraintEnd_toEndOf="@id/imageRectangle2"
+        app:layout_constraintStart_toEndOf="@+id/imageBullet2"
+        app:layout_constraintTop_toBottomOf="@+id/imageRectangle2" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageBullet2"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:layout_constraintBottom_toBottomOf="@+id/imageRectangle2"
+        app:layout_constraintStart_toStartOf="@+id/imageRectangle2"
+        app:layout_constraintTop_toTopOf="@+id/imageRectangle2"
         app:srcCompat="@drawable/ic_learningpoint_2" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/imageRectangle3"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="@color/mainColorTransparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@id/imageRectangle2" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/imageIcon3"
         android:layout_width="100dp"
         android:layout_height="70dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintBottom_toBottomOf="@+id/imageRectangle3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_amazon_logo"
-        android:tag="ic_amazon_logo"/>
+        app:srcCompat="@drawable/ic_amazon_logo" />
 
     <TextView
         android:id="@+id/learning3"
@@ -185,21 +182,32 @@
         android:layout_height="wrap_content"
         android:text="Lastly, get them on Amazon, Facebook marketplace or any other book store."
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-        app:layout_constraintEnd_toEndOf="@+id/imageView6"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView6" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageRectangle3"
+        app:layout_constraintEnd_toEndOf="@+id/imageRectangle3"
+        app:layout_constraintStart_toEndOf="@+id/imageBullet3"
+        app:layout_constraintTop_toTopOf="@+id/imageRectangle3" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imageBullet3"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:layout_constraintBottom_toBottomOf="@+id/imageRectangle3"
+        app:layout_constraintStart_toStartOf="@+id/imageRectangle3"
+        app:layout_constraintTop_toTopOf="@+id/imageRectangle3"
         app:srcCompat="@drawable/ic_learningpoint_3" />
 
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/home"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_effect_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_home_yellow" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

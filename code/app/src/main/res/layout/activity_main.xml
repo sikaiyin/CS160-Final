@@ -11,12 +11,11 @@
         android:id="@+id/performtask2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:text="Sign Out"
+        android:background="@android:color/transparent"
         android:onClick="logout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pbentertain" />
+        android:text="Sign Out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/termlabel"
@@ -52,11 +51,12 @@
 
     <Button
         android:id="@+id/mylearnings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:text="My Learnings"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
+        android:background="@drawable/button_effect"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -83,11 +83,12 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/myspendings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:text="My Spendings"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
+        android:background="@drawable/button_effect"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -126,15 +127,16 @@
     <ProgressBar
         android:id="@+id/pbbudget"
         style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="300dp"
+        android:layout_width="280dp"
         android:layout_height="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="21dp"
-        android:indeterminateTint="@android:color/holo_orange_dark"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="25dp"
+        android:progressTint="#24E606"
         android:max="100"
         android:progress="50"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivbudget"
-        app:layout_constraintTop_toBottomOf="@+id/yearofstudy" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/budget_label"
@@ -155,13 +157,13 @@
         app:layout_constraintBottom_toBottomOf="@+id/pbentertain"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/pbentertain"
-        app:srcCompat="@drawable/ic_hobbies_35dp" />
+        app:srcCompat="@drawable/ic_hobbies" />
 
     <ProgressBar
         android:id="@+id/pbentertain"
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
         android:indeterminateTint="@android:color/holo_orange_dark"
@@ -189,13 +191,13 @@
         app:layout_constraintBottom_toBottomOf="@+id/pbhealth"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/pbhealth"
-        app:srcCompat="@drawable/ic_health_35dp" />
+        app:srcCompat="@drawable/ic_health" />
 
     <ProgressBar
         android:id="@+id/pbhealth"
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
         android:indeterminateTint="@android:color/holo_orange_dark"
@@ -223,13 +225,13 @@
         app:layout_constraintBottom_toBottomOf="@+id/pbsocial"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/pbsocial"
-        app:srcCompat="@drawable/ic_social_life_35dp" />
+        app:srcCompat="@drawable/ic_social" />
 
     <ProgressBar
         android:id="@+id/pbsocial"
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
         android:indeterminateTint="@android:color/holo_orange_dark"
@@ -257,15 +259,15 @@
         app:layout_constraintBottom_toBottomOf="@+id/pbacademic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/pbacademic"
-        app:srcCompat="@drawable/ic_academics_35dp" />
+        app:srcCompat="@drawable/ic_academic" />
 
     <ProgressBar
         android:id="@+id/pbacademic"
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_height="25dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="60dp"
         android:indeterminateTint="@android:color/holo_orange_dark"
         android:max="100"
         android:progress="50"
@@ -286,23 +288,24 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivbudget"
         android:layout_width="40dp"
-        android:layout_height="35dp"
+        android:layout_height="40dp"
         android:layout_marginStart="25dp"
         app:layout_constraintBottom_toBottomOf="@+id/pbbudget"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/pbbudget"
-        app:srcCompat="@drawable/ic_bugget_35dp" />
+        app:srcCompat="@drawable/ic_budget" />
 
 
     <Button
         android:id="@+id/performtask"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
         android:text="Perform Task"
+        android:background="@drawable/button_effect"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pbentertain" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/monthlabel"

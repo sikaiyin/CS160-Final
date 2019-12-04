@@ -8,149 +8,30 @@
     tools:context=".MainActivity">
 
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="90dp"
-        android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <!--    <ScrollView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_marginTop="90dp"-->
+    <!--        android:fillViewport="true"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.0">-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical">
-
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/taskcategory1"
-                    android:layout_width="350dp"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="30dp"
-                    app:srcCompat="@drawable/ic_academic_catt_350dp"
-                    android:background="#00666666"/>
-
-                <TextView
-                    android:id="@+id/academic_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/taskcategory1"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="55dp"
-                    android:layout_weight="1"
-                    android:text="Academic"
-                    android:textSize="28dp"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_marginTop="20dp">
-
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/taskcategory2"
-                    android:layout_width="350dp"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="30dp"
-                    app:srcCompat="@drawable/ic_social_catt_350dp"
-                    android:background="#00666666">
-                </androidx.appcompat.widget.AppCompatImageButton>
-
-                <TextView
-                    android:id="@+id/social_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/taskcategory2"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="55dp"
-                    android:layout_weight="1"
-                    android:text="Social"
-                    android:textSize="28dp"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_marginTop="20dp">
-
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/taskcategory3"
-                    android:layout_width="350dp"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="30dp"
-                    app:srcCompat="@drawable/ic_health_catt_350dp"
-                    android:background="#00666666">
-                </androidx.appcompat.widget.AppCompatImageButton>
-
-                <TextView
-                    android:id="@+id/health_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/taskcategory3"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="55dp"
-                    android:layout_weight="1"
-                    android:text="Health"
-                    android:textSize="28dp"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_marginTop="20dp">
-
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/taskcategory4"
-                    android:layout_width="350dp"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="30dp"
-                    app:srcCompat="@drawable/ic_hobbies_catt_350dp"
-                    android:background="#00666666">
-                </androidx.appcompat.widget.AppCompatImageButton>
-
-                <TextView
-                    android:id="@+id/hobbies_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/taskcategory4"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="55dp"
-                    android:layout_weight="1"
-                    android:text="Hobbies"
-                    android:textSize="28dp"/>
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-
-    </ScrollView>
+    <!--    </ScrollView>-->
 
     <TextView
         android:id="@+id/tasklabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="90dp"
+        android:layout_marginStart="55dp"
         android:layout_marginTop="20dp"
         android:text="Task Category for"
-        android:textSize="20dp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -161,22 +42,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
         android:text="Week 1"
-        android:textSize="20dp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tasklabel"
         app:layout_constraintStart_toEndOf="@+id/tasklabel"
         app:layout_constraintTop_toTopOf="@+id/tasklabel" />
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/home"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:background="#00666666"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_home_button_white_40dp"/>
+    <!--    <androidx.appcompat.widget.AppCompatImageButton-->
+    android:id="@+id/home"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="5dp"
+    android:background="@android:color/transparent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/ic_home_button_white_40dp"/>
 
     <TextView
         android:id="@+id/note"
@@ -185,9 +66,188 @@
         android:layout_marginTop="0dp"
         android:text="Please select a category you want to perform"
         android:textSize="16dp"
+        android:textColor="@color/darkGray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tasklabel" />
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginTop="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/taskcategory1"
+                android:layout_width="350dp"
+                android:layout_height="150dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/button_effect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageCategory1"
+                android:layout_width="130dp"
+                android:layout_height="107dp"
+                android:layout_alignEnd="@+id/taskcategory1"
+                android:layout_alignBottom="@+id/taskcategory1"
+                android:layout_marginEnd="25dp"
+                app:srcCompat="@drawable/ic_academic" />
+
+            <TextView
+                android:id="@+id/academic_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/taskcategory1"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="55dp"
+                android:layout_weight="1"
+                android:text="Academic"
+                android:textSize="28dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/taskcategory2"
+                android:layout_width="350dp"
+                android:layout_height="150dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:background="@android:color/transparent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_button_gray_350dp" />
+
+            <ImageView
+                android:id="@+id/imageCategory2"
+                android:layout_width="130dp"
+                android:layout_height="107dp"
+                android:layout_alignEnd="@+id/taskcategory2"
+                android:layout_alignBottom="@+id/taskcategory2"
+                android:layout_marginEnd="25dp"
+                app:srcCompat="@drawable/ic_social" />
+
+            <TextView
+                android:id="@+id/social_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/taskcategory2"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="55dp"
+                android:layout_weight="1"
+                android:text="Social"
+                android:textSize="28dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical">
+
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/taskcategory3"
+                android:layout_width="350dp"
+                android:layout_height="150dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="-2dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_button_gray_350dp" />
+
+            <ImageView
+                android:id="@+id/imageCategory3"
+                android:layout_width="130dp"
+                android:layout_height="107dp"
+                android:layout_alignEnd="@+id/taskcategory3"
+                android:layout_alignBottom="@+id/taskcategory3"
+                android:layout_marginEnd="25dp"
+                app:srcCompat="@drawable/ic_health" />
+
+            <TextView
+                android:id="@+id/health_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/taskcategory3"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="55dp"
+                android:layout_weight="1"
+                android:text="Health"
+                android:textSize="28dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/taskcategory4"
+                android:layout_width="350dp"
+                android:layout_height="150dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:background="@android:color/transparent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/ic_button_gray_350dp" />
+
+            <ImageView
+                android:id="@+id/imageCategory4"
+                android:layout_width="130dp"
+                android:layout_height="107dp"
+                android:layout_alignEnd="@+id/taskcategory4"
+                android:layout_alignBottom="@+id/taskcategory4"
+                android:layout_marginEnd="25dp"
+                app:srcCompat="@drawable/ic_hobbies" />
+
+            <TextView
+                android:id="@+id/hobbies_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/taskcategory4"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="55dp"
+                android:layout_weight="1"
+                android:text="Hobbies"
+                android:textSize="28dp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

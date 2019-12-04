@@ -47,7 +47,7 @@ public class TaskScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_taskscreen);
 
-        home = (ImageButton)findViewById(R.id.home);
+//        home = (ImageButton)findViewById(R.id.home);
         tasklabel = (TextView)findViewById(R.id.tasklabel);
         explanation = (TextView)findViewById(R.id.note);
         option1 = (ImageButton)findViewById(R.id.option1);
@@ -68,13 +68,13 @@ public class TaskScreenActivity extends AppCompatActivity {
     {
         super.onStart();
 
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TaskScreenActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+//        home.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(TaskScreenActivity.this, MainActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
 

@@ -36,7 +36,7 @@ public class CategoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
-        home = (ImageButton)findViewById(R.id.home);
+//        home = (ImageButton)findViewById(R.id.home);
         taskcategory1 = (ImageButton)findViewById(R.id.taskcategory1);
 //        taskcategory2 = (ImageButton)findViewById(R.id.taskcategory2);
         taskcategory3 = (ImageButton)findViewById(R.id.taskcategory3);
@@ -51,13 +51,13 @@ public class CategoryActivity extends AppCompatActivity {
     {
         super.onStart();
 
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CategoryActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+//        home.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(CategoryActivity.this, MainActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         taskcategory1.setOnClickListener(new View.OnClickListener() {
             @Override

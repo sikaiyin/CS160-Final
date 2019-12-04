@@ -49,9 +49,9 @@ public class LearningScreenActivity extends AppCompatActivity {
         learning1 = (TextView) findViewById(R.id.learning1);
         learning2 = (TextView) findViewById(R.id.learning2);
         learning3 = (TextView) findViewById(R.id.learning3);
-        image1 = (ImageView) findViewById(R.id.imageView8);
-        image2 = (ImageView) findViewById(R.id.imageView9);
-        image3 = (ImageView) findViewById(R.id.imageView10);
+        image1 = (ImageView) findViewById(R.id.imageIcon1);
+        image2 = (ImageView) findViewById(R.id.imageIcon2);
+        image3 = (ImageView) findViewById(R.id.imageIcon3);
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
