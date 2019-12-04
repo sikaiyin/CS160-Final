@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -33,7 +34,11 @@ import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Nullable;
 
@@ -119,6 +124,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Initializing a Dictionary
+        Map<Object,ArrayList<Object>> multiMap = new HashMap<>();
+        ArrayList<Object> stuff = new ArrayList<>();
+        stuff.add("label");
+        stuff.add("picture");
+
+        multiMap.put("academic", stuff);
+
+
+        Log.d("mapping_keys", multiMap.keySet().toString());
+        Log.d("mapping_vals", multiMap.values().toString());
+
     }
     @Override
     protected void onStart()
@@ -135,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
         // and
         // progressbar.getProgressDrawable().setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
         // to change the color of the bar
+
 
         performtask.setOnClickListener(new View.OnClickListener() {
             @Override

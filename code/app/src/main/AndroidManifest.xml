@@ -25,6 +25,7 @@
         <activity android:name=".TasksOptionsActivity" />
         <activity android:name=".CategoryActivity"/>
         <activity android:name=".LearningScreenActivity"/>
+        <activity android:name=".MyLearningsAdapter" />
     </application>
 
 </manifest>
