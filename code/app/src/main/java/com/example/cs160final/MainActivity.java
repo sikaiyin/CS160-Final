@@ -8,7 +8,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -36,11 +35,7 @@ import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Dictionary;
-import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.Nullable;
 
@@ -136,18 +131,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Initializing a Dictionary
-        Map<Object,ArrayList<Object>> multiMap = new HashMap<>();
-        ArrayList<Object> stuff = new ArrayList<>();
-        stuff.add("label");
-        stuff.add("picture");
-
-        multiMap.put("academic", stuff);
-
-
-        Log.d("mapping_keys", multiMap.keySet().toString());
-        Log.d("mapping_vals", multiMap.values().toString());
-
     }
     @Override
     protected void onStart()
@@ -166,10 +149,7 @@ public class MainActivity extends AppCompatActivity {
         // to change the color of the bar
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 12447b4ac3ea61cd3f4a66133614f2f43349c65f
         performtask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -188,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
         mylearnings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, com.example.cs160final.MyLearningsActivity.class);
+                Intent intent = new Intent(MainActivity.this, com.example.cs160final.list.class);
                 startActivity(intent);
 
             }

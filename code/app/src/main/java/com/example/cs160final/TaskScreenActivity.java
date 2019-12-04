@@ -53,6 +53,8 @@ public class TaskScreenActivity extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
 
+
+
     }
     @Override
     protected void onStart()
@@ -66,6 +68,8 @@ public class TaskScreenActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
 
         option1.setOnClickListener(new View.OnClickListener() {
             @Override

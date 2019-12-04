@@ -28,6 +28,10 @@ public class LearningScreenActivity extends AppCompatActivity {
     TextView learning1;
     TextView learning2;
     TextView learning3;
+    ImageView image1;
+    ImageView image2;
+    ImageView image3;
+
     TextView tasklabel;
     TextView learninglabel;
     FirebaseAuth fAuth;
@@ -45,6 +49,9 @@ public class LearningScreenActivity extends AppCompatActivity {
         learning1 = (TextView) findViewById(R.id.learning1);
         learning2 = (TextView) findViewById(R.id.learning2);
         learning3 = (TextView) findViewById(R.id.learning3);
+        image1 = (ImageView) findViewById(R.id.imageView8);
+        image2 = (ImageView) findViewById(R.id.imageView9);
+        image3 = (ImageView) findViewById(R.id.imageView10);
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
@@ -53,7 +60,6 @@ public class LearningScreenActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +74,9 @@ public class LearningScreenActivity extends AppCompatActivity {
                                 documentReference.update("fLearning", FieldValue.arrayUnion(learning1.getText()));
                                 documentReference.update("fLearning", FieldValue.arrayUnion(learning2.getText()));
                                 documentReference.update("fLearning", FieldValue.arrayUnion(learning3.getText()));
+                                documentReference.update("fGraph", FieldValue.arrayUnion(image1.getTag()));
+                                documentReference.update("fGraph", FieldValue.arrayUnion(image2.getTag()));
+                                documentReference.update("fGraph", FieldValue.arrayUnion(image3.getTag()));
                                 Intent intent = new Intent(LearningScreenActivity.this, com.example.cs160final.MainActivity.class);
                                 startActivity(intent);
                             }
