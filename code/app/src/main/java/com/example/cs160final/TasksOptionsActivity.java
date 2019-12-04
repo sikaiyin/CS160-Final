@@ -36,7 +36,7 @@ public class TasksOptionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tasksoption);
 
-        home = (ImageButton)findViewById(R.id.home);
+//        home = (ImageButton)findViewById(R.id.home);
         task1 = (ImageButton)findViewById(R.id.task1);
         task2 = (ImageButton)findViewById(R.id.task2);
         task3 = (ImageButton)findViewById(R.id.task3);
@@ -55,13 +55,13 @@ public class TasksOptionsActivity extends AppCompatActivity {
     {
         super.onStart();
 
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(TasksOptionsActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+//        home.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(TasksOptionsActivity.this, MainActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         task1.setOnClickListener(new View.OnClickListener() {
             @Override
