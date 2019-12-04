@@ -92,7 +92,8 @@
         android:layout_marginBottom="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageRectangle1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_hacker" />
+        app:srcCompat="@drawable/ic_hacker"
+        android:tag="ic_hacker"/>
 
     <TextView
         android:id="@+id/learning1"
@@ -133,7 +134,8 @@
         android:layout_marginBottom="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageRectangle2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_super_friend" />
+        app:srcCompat="@drawable/ic_super_friend"
+        android:tag="ic_super_friend" />
 
     <TextView
         android:id="@+id/learning2"
@@ -174,7 +176,8 @@
         android:layout_marginBottom="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageRectangle3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_amazon_logo" />
+        app:srcCompat="@drawable/ic_amazon_logo"
+        android:tag="ic_amazon_logo"/>
 
     <TextView
         android:id="@+id/learning3"

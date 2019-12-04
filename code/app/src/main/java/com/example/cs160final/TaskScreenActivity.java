@@ -82,7 +82,6 @@ public class TaskScreenActivity extends AppCompatActivity {
 //        });
 
 
-
         option1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
