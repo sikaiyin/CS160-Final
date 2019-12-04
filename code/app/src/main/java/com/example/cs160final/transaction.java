@@ -112,7 +112,7 @@ public class transaction extends AppCompatActivity {
             // now set our resources on views
             //images.setImageResource(rImgs[position]);
             myTitle.setText(rTitle.get(position));
-            myBlance.setText("$" + rImgs.get(position));
+            myBlance.setText("Current Balance : $" + rImgs.get(position));
 
             return row;
         }

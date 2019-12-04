@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.Calendar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -23,6 +24,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,6 +40,9 @@ public class TaskScreenActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
+
+
+    Date currentTime = Calendar.getInstance().getTime();
 
     TextView tasklabel;
     TextView explanation;
@@ -89,7 +94,7 @@ public class TaskScreenActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             final DocumentSnapshot document = task.getResult();
                             if(document.exists()){
-                                documentReference.update("fOption", FieldValue.arrayUnion(label1.getText()));
+                                documentReference.update("fOption", FieldValue.arrayUnion(label1.getText() + "\n At  " + currentTime.toString()));
                                 documentReference.update("fCurrentBalance", FieldValue.arrayUnion(Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 10)));
 
                                 documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 10));
