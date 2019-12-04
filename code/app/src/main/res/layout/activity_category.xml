@@ -33,9 +33,12 @@
                     android:id="@+id/taskcategory1"
                     android:layout_width="350dp"
                     android:layout_height="150dp"
-                    android:layout_marginLeft="30dp"
-                    app:srcCompat="@drawable/ic_academic_catt_350dp"
-                    android:background="#00666666"/>
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="#00666666"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/ic_academic_catt_350dp" />
 
                 <TextView
                     android:id="@+id/academic_label"
@@ -86,14 +89,23 @@
                 android:gravity="center_vertical"
                 android:layout_marginTop="20dp">
 
+
+
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/taskcategory3"
                     android:layout_width="350dp"
                     android:layout_height="150dp"
-                    android:layout_marginLeft="30dp"
-                    app:srcCompat="@drawable/ic_health_catt_350dp"
-                    android:background="#00666666">
+
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:text="hello"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/ic_button_yellow"
+                    android:background="@android:color/transparent">
                 </androidx.appcompat.widget.AppCompatImageButton>
+
+
 
                 <TextView
                     android:id="@+id/health_label"
@@ -106,6 +118,16 @@
                     android:layout_weight="1"
                     android:text="Health"
                     android:textSize="28dp"/>
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/taskcategory3"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="44dp"
+                    app:srcCompat="@drawable/ic_health_catt_logo" />
 
             </RelativeLayout>
 
