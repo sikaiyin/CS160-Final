@@ -1,15 +1,26 @@
 package com.example.cs160final;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.FileObserver;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LearningScreenActivity extends AppCompatActivity {
 
@@ -19,31 +30,54 @@ public class LearningScreenActivity extends AppCompatActivity {
     TextView learning3;
     TextView tasklabel;
     TextView learninglabel;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learningscreen);
 
-        home = (ImageButton)findViewById(R.id.home);
-        tasklabel = (TextView)findViewById(R.id.tasklabel);
-        learninglabel = (TextView)findViewById(R.id.note);
-        learning1 = (TextView)findViewById(R.id.learning1);
-        learning2 = (TextView)findViewById(R.id.learning2);
-        learning3 = (TextView)findViewById(R.id.learning3);
+        home = (ImageButton) findViewById(R.id.home);
+        tasklabel = (TextView) findViewById(R.id.tasklabel);
+        learninglabel = (TextView) findViewById(R.id.note);
+        learning1 = (TextView) findViewById(R.id.learning1);
+        learning2 = (TextView) findViewById(R.id.learning2);
+        learning3 = (TextView) findViewById(R.id.learning3);
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        userID = fAuth.getCurrentUser().getUid();
     }
+
     @Override
-    protected void onStart()
-    {
+    protected void onStart() {
         super.onStart();
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LearningScreenActivity.this, com.example.cs160final.MainActivity.class);
-                startActivity(intent);
+                userID = fAuth.getCurrentUser().getUid();
+                final DocumentReference documentReference = fStore.collection("users").document(userID);
+                documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                documentReference.update("fLearning", FieldValue.arrayUnion(learning1.getText()));
+                                documentReference.update("fLearning", FieldValue.arrayUnion(learning2.getText()));
+                                documentReference.update("fLearning", FieldValue.arrayUnion(learning3.getText()));
+                                Intent intent = new Intent(LearningScreenActivity.this, com.example.cs160final.MainActivity.class);
+                                startActivity(intent);
+                            }
+                        }
+
+                    }
+                });
             }
         });
-
     }
 }
+
+

@@ -76,7 +76,7 @@ public class TaskScreenActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         if (task.isSuccessful()){
-                            DocumentSnapshot document = task.getResult();
+                            final DocumentSnapshot document = task.getResult();
                             if(document.exists()){
                                 documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 10));
                                 documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) + 20));
@@ -97,8 +97,15 @@ public class TaskScreenActivity extends AppCompatActivity {
                                 }).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
+                                        if(Integer.parseInt(document.get("fBudget").toString()) < 0 ||
+                                                Integer.parseInt(document.get("fAcademics").toString()) < 0 ||
+                                                Integer.parseInt(document.get("fSocial").toString()) < 0 ||
+                                                Integer.parseInt(document.get("fHealth").toString()) < 0){
+                                            Toast.makeText(TaskScreenActivity.this, "Game Over",
+                                                    Toast.LENGTH_SHORT).show();
+                                        }else{
                                         Intent intent = new Intent(TaskScreenActivity.this, LearningScreenActivity.class);
-                                        startActivity(intent);
+                                        startActivity(intent);}
                                     }
                                 });
 
