@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".list"></activity>
+        <activity android:name=".transaction"></activity>
+        <activity android:name=".list" />
         <activity android:name=".login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +22,6 @@
         </activity>
         <activity android:name=".registeration" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".MySpendingsActivity" />
         <activity android:name=".TaskScreenActivity" />
         <activity android:name=".TasksOptionsActivity" />
         <activity android:name=".CategoryActivity" />

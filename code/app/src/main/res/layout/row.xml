@@ -31,15 +31,14 @@
             />
 
         <TextView
+            android:id="@+id/textViewMoney"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sub Title"
-            android:textColor="#a9a9a9"
-            android:textStyle="bold"
             android:layout_margin="5dp"
+            android:text="Verified"
+            android:textColor="#a9a9a9"
             android:textSize="15sp"
-            android:id="@+id/textView2"
-            />
+            android:textStyle="bold" />
         <!--so our layout is set-->
 
     </LinearLayout>

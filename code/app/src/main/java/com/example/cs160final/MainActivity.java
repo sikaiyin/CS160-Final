@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         myspendings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, com.example.cs160final.MySpendingsActivity.class);
+                Intent intent = new Intent(MainActivity.this, com.example.cs160final.transaction.class);
                 startActivity(intent);
 
             }

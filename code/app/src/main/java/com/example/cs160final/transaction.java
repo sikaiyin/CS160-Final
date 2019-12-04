@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -26,10 +27,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class list extends AppCompatActivity {
+public class transaction extends AppCompatActivity {
 
     // ListView testing
     ListView mListView;
@@ -39,19 +39,24 @@ public class list extends AppCompatActivity {
     String userID;
     private StorageReference mStorageRef;
 
-    List<String> images;
-    List<String> Names;
 
+    List<String> Names;
+    List<String> Balances;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
-
-        mImage = (ImageView)findViewById(R.id.imageView11);
+        setContentView(R.layout.activity_transaction);
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
+
+        // For the list view on the popup window
+        mListView = (ListView) findViewById(R.id.listView);
+        mImage = (ImageView) findViewById(R.id.imageView11);
+
+        userID = fAuth.getCurrentUser().getUid();
+
         mStorageRef = FirebaseStorage.getInstance().getReference("user_profile");
 
 
@@ -62,10 +67,6 @@ public class list extends AppCompatActivity {
             }
         });
 
-        // For the list view on the popup window
-        mListView = (ListView) findViewById(R.id.listView);
-
-        userID = fAuth.getCurrentUser().getUid();
         final DocumentReference documentReference = fStore.collection("users").document(userID);
         documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -73,10 +74,10 @@ public class list extends AppCompatActivity {
                 if (task.isSuccessful()){
                     final DocumentSnapshot document = task.getResult();
                     if(document.exists()) {
-                        Names = (List<String>) document.get("fLearning");
-                        images = (List<String>) document.get("fGraph");
+                        Names = (List<String>) document.get("fOption");
+                        Balances = (List<String>) document.get("fCurrentBalance");
 
-                        MyAdapter adapter = new MyAdapter(list.this, Names, images);
+                        transaction.MyAdapter adapter = new transaction.MyAdapter(transaction.this, Names, Balances);
                         //MyLearningsAdapter.CustomAdaptor mCustomAdaptor = new MyLearningsAdapter.CustomAdaptor();
                         mListView.setAdapter(adapter);
 
@@ -92,7 +93,7 @@ public class list extends AppCompatActivity {
         List<String> rImgs;
 
         MyAdapter (Context c, List<String> title, List<String> imgs) {
-            super(c, R.layout.row, R.id.textViewBrand, title);
+            super(c, R.layout.transaction, R.id.textViewOption, title);
             this.context = c;
             this.rTitle = title;
             this.rImgs = imgs;
@@ -103,15 +104,15 @@ public class list extends AppCompatActivity {
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
             LayoutInflater layoutInflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View row = layoutInflater.inflate(R.layout.row, parent, false);
-            ImageView image = row.findViewById(R.id.imageViewBrand);
-            TextView myTitle = row.findViewById(R.id.textViewBrand);
+            View row = layoutInflater.inflate(R.layout.transaction, parent, false);
+
+            TextView myTitle = row.findViewById(R.id.textViewOption);
+            TextView myBlance = row.findViewById(R.id.textViewCurrent);
 
             // now set our resources on views
             //images.setImageResource(rImgs[position]);
             myTitle.setText(rTitle.get(position));
-            int id = getResources().getIdentifier("com.example.cs160final:drawable/" + images.get(position), null, null);
-            image.setImageResource(id);
+            myBlance.setText("$" + rImgs.get(position));
 
             return row;
         }

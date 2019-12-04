@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -31,6 +32,9 @@ public class TaskScreenActivity extends AppCompatActivity {
     ImageButton option1;
     ImageButton option2;
     ImageButton option3;
+    TextView label1;
+    TextView label2;
+    TextView label3;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
@@ -49,6 +53,9 @@ public class TaskScreenActivity extends AppCompatActivity {
         option1 = (ImageButton)findViewById(R.id.option1);
         option2 = (ImageButton)findViewById(R.id.option2);
         option3 = (ImageButton)findViewById(R.id.option3);
+        label1 = (TextView)findViewById(R.id.option1_label);
+        label2 = (TextView)findViewById(R.id.option2_label);
+        label3 = (TextView)findViewById(R.id.option3_label);
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
@@ -82,7 +89,11 @@ public class TaskScreenActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             final DocumentSnapshot document = task.getResult();
                             if(document.exists()){
+                                documentReference.update("fOption", FieldValue.arrayUnion(label1.getText()));
+                                documentReference.update("fCurrentBalance", FieldValue.arrayUnion(Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 10)));
+
                                 documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 10));
+
                                 documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) + 20));
                                 documentReference.update("fSocial", Integer.toString(Integer.parseInt(document.get("fSocial").toString()) - 30));
                                 documentReference.update("fHealth", Integer.toString(Integer.parseInt(document.get("fHealth").toString()) - 10))
