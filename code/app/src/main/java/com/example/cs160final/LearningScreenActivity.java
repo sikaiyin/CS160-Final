@@ -1,8 +1,10 @@
 package com.example.cs160final;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.FileObserver;
@@ -60,6 +62,25 @@ public class LearningScreenActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(LearningScreenActivity.this);
+
+        builder.setCancelable(true);
+        builder.setTitle("Completion");
+        builder.setMessage("You have completed this task!");
+
+        ImageView image = new ImageView(this);
+        image.setImageResource(R.drawable.ic_confetti);
+
+        builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        builder.setView(image);
+        builder.show();
+
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
