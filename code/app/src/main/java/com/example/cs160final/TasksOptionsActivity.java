@@ -68,7 +68,6 @@ public class TasksOptionsActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
-        Toast.makeText(this, tasklabel1.getText().toString(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
