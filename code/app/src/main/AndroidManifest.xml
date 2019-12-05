@@ -26,6 +26,9 @@
         <activity android:name=".TasksOptionsActivity" />
         <activity android:name=".CategoryActivity" />
         <activity android:name=".LearningScreenActivity" />
+        <activity android:name=".LearningScreenActivity3Health1Exercise"/>
+        <activity android:name=".TaskScreenActivity3Health1Exercise"/>
+        <activity android:name=".TasksOptionsActivity3Health"/>
     </application>
 
 </manifest>

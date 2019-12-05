@@ -38,7 +38,7 @@ public class CategoryActivity extends AppCompatActivity {
 
 //        home = (ImageButton)findViewById(R.id.home);
         taskcategory1 = (ImageButton)findViewById(R.id.taskcategory1);
-//        taskcategory2 = (ImageButton)findViewById(R.id.taskcategory2);
+        taskcategory2 = (ImageButton)findViewById(R.id.taskcategory2);
         taskcategory3 = (ImageButton)findViewById(R.id.taskcategory3);
         taskcategory4 = (ImageButton)findViewById(R.id.taskcategory4);
 //        task1 = (ImageButton)findViewById(R.id.task1);
@@ -63,6 +63,13 @@ public class CategoryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CategoryActivity.this, TasksOptionsActivity.class);
+                startActivity(intent);
+            }
+        });
+        taskcategory3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CategoryActivity.this, TasksOptionsActivity3Health.class);
                 startActivity(intent);
             }
         });

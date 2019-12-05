@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainColor"
+    tools:context=".MainActivity">
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="90dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/task1"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="30dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_button_gray_150dp" />
+
+                <ImageView
+                    android:id="@+id/imageTask1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignEnd="@+id/task1"
+                    android:layout_alignBottom="@+id/task1"
+                    android:layout_marginEnd="10dp"
+                    app:srcCompat="@drawable/ic_physical_examination" />
+
+                <TextView
+                    android:id="@+id/taskOption1_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/task1"
+                    android:layout_alignEnd="@+id/task1"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="18sp"
+                    android:text="Do Physical Examination" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/task2"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="30dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_button_gray_150dp" />
+
+                <ImageView
+                    android:id="@+id/imageTask2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignEnd="@+id/task2"
+                    android:layout_alignBottom="@+id/task2"
+                    android:layout_marginEnd="10dp"
+                    app:srcCompat="@drawable/ic_weighingscale" />
+
+                <TextView
+                    android:id="@+id/equipment_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/task2"
+                    android:layout_alignEnd="@+id/task2"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="18sp"
+                    android:text="Buy a Weighing Scale" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginTop="20dp">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/task3"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="30dp"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_button_gray_150dp" />
+
+                <ImageView
+                    android:id="@+id/imageTask3"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignEnd="@+id/task3"
+                    android:layout_alignBottom="@+id/task3"
+                    android:layout_marginEnd="10dp"
+                    app:srcCompat="@drawable/ic_exercise" />
+
+                <TextView
+                    android:id="@+id/supplies_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/task3"
+                    android:layout_alignEnd="@+id/task3"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="18sp"
+                    android:text="Do Exercise" />
+
+<!--                <androidx.appcompat.widget.AppCompatImageButton-->
+<!--                    android:id="@+id/task4"-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_marginEnd="30dp"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    app:srcCompat="@drawable/ic_button_gray_150dp" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageTask4"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:layout_alignEnd="@+id/task4"-->
+<!--                    android:layout_alignBottom="@+id/task4"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    app:srcCompat="@drawable/ic_tutor" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tutor_label"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignStart="@+id/task4"-->
+<!--                    android:layout_alignEnd="@+id/task4"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:text="Pay for Tutoring" />-->
+
+            </RelativeLayout>
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:layout_marginTop="20dp">-->
+
+<!--                <androidx.appcompat.widget.AppCompatImageButton-->
+<!--                    android:id="@+id/task5"-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:layout_alignParentStart="true"-->
+<!--                    android:layout_marginStart="30dp"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    app:srcCompat="@drawable/ic_button_gray_150dp" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageTask5"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:layout_alignEnd="@+id/task5"-->
+<!--                    android:layout_alignBottom="@+id/task5"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    app:srcCompat="@drawable/ic_laptop" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/laptop_label"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignStart="@+id/task5"-->
+<!--                    android:layout_alignEnd="@+id/task5"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:text="Buy New Laptop" />-->
+
+<!--                <androidx.appcompat.widget.AppCompatImageButton-->
+<!--                    android:id="@+id/task6"-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_marginEnd="30dp"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    app:srcCompat="@drawable/ic_button_gray_150dp" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageTask6"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:layout_alignEnd="@+id/task6"-->
+<!--                    android:layout_alignBottom="@+id/task6"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    app:srcCompat="@drawable/ic_desk_chair" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/desk_label"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignStart="@+id/task6"-->
+<!--                    android:layout_alignEnd="@+id/task6"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:text="Buy Desk/Chair" />-->
+
+<!--            </RelativeLayout>-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:layout_marginTop="20dp">-->
+
+<!--                <androidx.appcompat.widget.AppCompatImageButton-->
+<!--                    android:id="@+id/task7"-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:layout_alignParentStart="true"-->
+<!--                    android:layout_marginStart="30dp"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    app:srcCompat="@drawable/ic_button_gray_150dp" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageTask7"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:layout_alignEnd="@+id/task7"-->
+<!--                    android:layout_alignBottom="@+id/task7"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    app:srcCompat="@drawable/ic_tablet" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tablet_label"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignStart="@+id/task7"-->
+<!--                    android:layout_alignEnd="@+id/task7"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:text="Buy New Tablet" />-->
+
+<!--                <androidx.appcompat.widget.AppCompatImageButton-->
+<!--                    android:id="@+id/task8"-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_marginEnd="30dp"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    app:srcCompat="@drawable/ic_button_gray_150dp" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageTask8"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:layout_alignEnd="@+id/task8"-->
+<!--                    android:layout_alignBottom="@+id/task8"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    app:srcCompat="@drawable/ic_building" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tuition_label"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignStart="@+id/task8"-->
+<!--                    android:layout_alignEnd="@+id/task8"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:text="Pay for Tuition" />-->
+
+<!--            </RelativeLayout>-->
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tasklabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="20dp"
+        android:text="Task Options for"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:text="Week 1"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tasklabel"
+        app:layout_constraintStart_toEndOf="@+id/tasklabel"
+        app:layout_constraintTop_toTopOf="@+id/tasklabel" />
+
+    <!--    <androidx.appcompat.widget.AppCompatImageButton-->
+    <!--        android:id="@+id/home"-->
+    <!--        android:layout_width="40dp"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        android:layout_marginStart="5dp"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        android:background="#00666666"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:srcCompat="@drawable/ic_home_button_white_40dp"/>-->
+
+    <TextView
+        android:id="@+id/note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:text="Please select an option you want to perform."
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tasklabel" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

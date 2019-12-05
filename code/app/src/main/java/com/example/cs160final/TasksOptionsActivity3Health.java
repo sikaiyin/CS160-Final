@@ -24,7 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TasksOptionsActivity extends AppCompatActivity {
+public class TasksOptionsActivity3Health extends AppCompatActivity {
 
     ImageButton home;
     ImageButton task1;
@@ -50,7 +50,7 @@ public class TasksOptionsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tasksoption);
+        setContentView(R.layout.activity_tasksoption3health);
 
 //        home = (ImageButton)findViewById(R.id.home);
         task1 = (ImageButton)findViewById(R.id.task1);
@@ -84,7 +84,7 @@ public class TasksOptionsActivity extends AppCompatActivity {
 //            }
 //        });
 
-        task1.setOnClickListener(new View.OnClickListener() {
+        task3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 userID = fAuth.getCurrentUser().getUid();
@@ -97,11 +97,11 @@ public class TasksOptionsActivity extends AppCompatActivity {
                             if (document.exists()) {
                                 mTasks = (List<String>) document.get("fTaskList");
                                 if (mTasks.contains(tasklabel1.getText().toString())) {
-                                    Toast.makeText(TasksOptionsActivity.this, "Task Already Completed!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(TasksOptionsActivity3Health.this, "Task Already Completed!", Toast.LENGTH_SHORT).show();
                                 }
                                     documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
                                     documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
-                                    Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity.class);
+                                    Intent intent = new Intent(TasksOptionsActivity3Health.this, TaskScreenActivity3Health1Exercise.class);
                                     startActivity(intent);
 
                             }
