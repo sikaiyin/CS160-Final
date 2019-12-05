@@ -190,7 +190,7 @@ public class registeration extends AppCompatActivity {
                             user.put("fSocial", "50");
                             user.put("fHealth", "50");
                             user.put("fHobbies", "50");
-                            documentReference.update("fTaskList", FieldValue.arrayUnion(""));
+                            user.put("fTaskList", FieldValue.arrayUnion(""));
                             if(mUploadTask != null && mUploadTask.isInProgress()){
                                 Toast.makeText(registeration.this, "Upload In Progress", Toast.LENGTH_SHORT).show();
                             }else{
