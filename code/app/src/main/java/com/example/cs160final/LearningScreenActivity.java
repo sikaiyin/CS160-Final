@@ -63,10 +63,11 @@ public class LearningScreenActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        // Pop-up message when a task is selected and provide user feedback that it has been completed
         AlertDialog.Builder builder = new AlertDialog.Builder(LearningScreenActivity.this);
 
         builder.setCancelable(true);
-        builder.setTitle("Completion");
+        builder.setTitle("Congratulations");
         builder.setMessage("You have completed this task!");
 
         ImageView image = new ImageView(this);

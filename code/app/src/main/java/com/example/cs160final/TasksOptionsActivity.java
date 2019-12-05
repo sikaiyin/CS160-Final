@@ -1,8 +1,10 @@
 package com.example.cs160final;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -97,13 +99,40 @@ public class TasksOptionsActivity extends AppCompatActivity {
                             if (document.exists()) {
                                 mTasks = (List<String>) document.get("fTaskList");
                                 if (mTasks.contains(tasklabel1.getText().toString())) {
-                                    Toast.makeText(TasksOptionsActivity.this, "Task Already Completed!", Toast.LENGTH_SHORT).show();
-                                }
-                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
-                                    Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity.class);
-                                    startActivity(intent);
+//                                    Toast.makeText(TasksOptionsActivity.this, "Task Already Completed!", Toast.LENGTH_SHORT).show();
 
+                                    // Pop-up message when a task is selected and provide user feedback that it has been completed
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(TasksOptionsActivity.this);
+
+                                    builder.setCancelable(true);
+                                    builder.setTitle("Task Already Completed!");
+                                    builder.setMessage("Please choose another task option.");
+
+                                    ImageView image = new ImageView(TasksOptionsActivity.this);
+                                    image.setImageResource(R.drawable.ic_warning);
+
+                                    builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            dialogInterface.cancel();
+                                        }
+                                    });
+                                    builder.setView(image);
+                                    builder.show();
+
+                                }
+//                                else {
+//                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+//                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
+//                                    Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity.class);
+//                                    startActivity(intent);
+//                                }
+
+                                 // TESTING: use this line of code if you wish to by passed Completed Tasks
+                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
+                                Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity.class);
+                                startActivity(intent);
                             }
 
                         }

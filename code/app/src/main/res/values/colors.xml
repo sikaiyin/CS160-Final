@@ -4,7 +4,12 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="white">#FFFFFF</color>
-    <color name="mainColor">#00B0C0</color>
-    <color name="mainColorTransparent">#B300E9FF</color>
+    <color name="mainColor">#5EB9AD</color>
+    <color name="mainColorTransparent">#FDDD8A</color>
     <color name="darkGray">#4D4D4D</color>
+    <color name="lightGray">#E0E0E0</color>
+    <color name="lightBlue">#00B0FF</color>
 </resources>
+
+<!--<color name="mainColor">#00B0C0</color>-->
+<!--<color name="mainColorTransparent">#B300E9FF</color>-->
