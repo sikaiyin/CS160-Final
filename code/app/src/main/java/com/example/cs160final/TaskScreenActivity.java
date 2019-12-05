@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -28,7 +29,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TaskScreenActivity extends AppCompatActivity {
+public class TaskScreenActivity extends AppCompatActivity implements View.OnClickListener{
 
     ImageButton home;
     ImageButton option1;
@@ -46,6 +47,8 @@ public class TaskScreenActivity extends AppCompatActivity {
 
     TextView tasklabel;
     TextView explanation;
+    ImageButton optionSelected;
+    TextView currentLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +68,9 @@ public class TaskScreenActivity extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
 
-
+        option1.setOnClickListener(this);
+        option2.setOnClickListener(this);
+        option3.setOnClickListener(this);
 
     }
     @Override
@@ -81,59 +86,76 @@ public class TaskScreenActivity extends AppCompatActivity {
 //            }
 //        });
 
+    }
 
-        option1.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        // Perform action on click
+        switch(view.getId()) {
+            case R.id.option1:
+                optionSelected = option1;
+                currentLabel = label1;
+//                Log.d("Option 1 selected", optionSelected.toString());
+                break;
+            case R.id.option2:
+                optionSelected = option2;
+                currentLabel = label2;
+//                Log.d("Option 2 selected", optionSelected.toString());
+                break;
+            case R.id.option3:
+                optionSelected = option3;
+                currentLabel = label3;
+//                Log.d("Option 3 selected", optionSelected.toString());
+                break;
+        }
+
+
+        userID = fAuth.getCurrentUser().getUid();
+        final DocumentReference documentReference = fStore.collection("users").document(userID);
+        documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
-            public void onClick(View v) {
-                userID = fAuth.getCurrentUser().getUid();
-                final DocumentReference documentReference = fStore.collection("users").document(userID);
-                documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()){
-                            final DocumentSnapshot document = task.getResult();
-                            if(document.exists()){
-                                documentReference.update("fOption", FieldValue.arrayUnion(label1.getText() + "\n At  " + currentTime.toString()));
-                                documentReference.update("fCurrentBalance", FieldValue.arrayUnion(Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 10)));
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()){
+                    final DocumentSnapshot document = task.getResult();
+                    if(document.exists()){
+                        documentReference.update("fOption", FieldValue.arrayUnion(currentLabel.getText() + "\n At  " + currentTime.toString()));
+                        documentReference.update("fCurrentBalance", FieldValue.arrayUnion(Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 10)));
 
-                                documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 10));
+                        documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 10));
 
-                                documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) + 20));
-                                documentReference.update("fSocial", Integer.toString(Integer.parseInt(document.get("fSocial").toString()) - 30));
-                                documentReference.update("fHealth", Integer.toString(Integer.parseInt(document.get("fHealth").toString()) - 10))
-                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) + 20));
+                        documentReference.update("fSocial", Integer.toString(Integer.parseInt(document.get("fSocial").toString()) - 30));
+                        documentReference.update("fHealth", Integer.toString(Integer.parseInt(document.get("fHealth").toString()) - 10))
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
                                         Toast.makeText(TaskScreenActivity.this, "Updated Successfully",
                                                 Toast.LENGTH_SHORT).show();
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(TaskScreenActivity.this, "Unable to Update",
-                                                Toast.LENGTH_SHORT).show();
-                                    }
-                                }).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if(Integer.parseInt(document.get("fBudget").toString()) < 0 ||
-                                                Integer.parseInt(document.get("fAcademics").toString()) < 0 ||
-                                                Integer.parseInt(document.get("fSocial").toString()) < 0 ||
-                                                Integer.parseInt(document.get("fHealth").toString()) < 0){
-                                            Toast.makeText(TaskScreenActivity.this, "Game Over",
-                                                    Toast.LENGTH_SHORT).show();
-                                        }else{
-                                        Intent intent = new Intent(TaskScreenActivity.this, LearningScreenActivity.class);
-                                        startActivity(intent);}
-                                    }
-                                });
-
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(TaskScreenActivity.this, "Unable to Update",
+                                        Toast.LENGTH_SHORT).show();
                             }
-                        }
+                        }).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if(Integer.parseInt(document.get("fBudget").toString()) < 0 ||
+                                        Integer.parseInt(document.get("fAcademics").toString()) < 0 ||
+                                        Integer.parseInt(document.get("fSocial").toString()) < 0 ||
+                                        Integer.parseInt(document.get("fHealth").toString()) < 0){
+                                    Toast.makeText(TaskScreenActivity.this, "Game Over",
+                                            Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Intent intent = new Intent(TaskScreenActivity.this, LearningScreenActivity.class);
+                                    startActivity(intent);}
+                            }
+                        });
+
                     }
-                });
+                }
             }
         });
-
     }
 }
