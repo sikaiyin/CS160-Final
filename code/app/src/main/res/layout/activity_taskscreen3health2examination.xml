@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Hanging out with Your Friends"
+        android:text="Doing Physical Examination"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,14 +61,14 @@
         app:layout_constraintBottom_toBottomOf="@+id/option1"
         app:layout_constraintStart_toStartOf="@+id/option1"
         app:layout_constraintTop_toTopOf="@+id/option1"
-        app:srcCompat="@drawable/ic_walkingnearby" />
+        app:srcCompat="@drawable/ic_simple" />
 
     <TextView
         android:id="@+id/option1_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Walk nearby \n $2"
+        android:text="Take a simple one \n $50"
         android:textAlignment="center"
         android:textSize="20sp"
         android:layout_marginStart="20dp"
@@ -82,38 +82,38 @@
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="@+id/option1_label"
         app:layout_constraintTop_toBottomOf="@+id/option1_label"
-        app:srcCompat="@drawable/ic_academic" />
+        app:srcCompat="@drawable/ic_health" />
 
     <TextView
         android:id="@+id/option1_points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-1 points"
+        android:text="+5 points"
         android:textSize="16sp"
         android:layout_marginStart="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/option1_icon"
         app:layout_constraintStart_toEndOf="@+id/option1_icon"
         app:layout_constraintTop_toTopOf="@+id/option1_icon" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/option1_icon2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="@+id/option1_icon"
-        app:layout_constraintTop_toBottomOf="@+id/option1_icon"
-        app:srcCompat="@drawable/ic_social" />
+<!--    <androidx.appcompat.widget.AppCompatImageView-->
+<!--        android:id="@+id/option1_icon2"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/option1_icon"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/option1_icon"-->
+<!--        app:srcCompat="@drawable/ic_social" />-->
 
-    <TextView
-        android:id="@+id/option1_points2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+10 points"
-        android:textSize="16sp"
-        android:layout_marginStart="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/option1_icon2"
-        app:layout_constraintStart_toEndOf="@+id/option1_icon2"
-        app:layout_constraintTop_toTopOf="@+id/option1_icon2" />
+<!--    <TextView-->
+<!--        android:id="@+id/option1_points2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="+3 points"-->
+<!--        android:textSize="16sp"-->
+<!--        android:layout_marginStart="5dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/option1_icon2"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/option1_icon2"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/option1_icon2" />-->
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/option2"
@@ -135,14 +135,14 @@
         app:layout_constraintBottom_toBottomOf="@+id/option2"
         app:layout_constraintStart_toStartOf="@+id/option2"
         app:layout_constraintTop_toTopOf="@+id/option2"
-        app:srcCompat="@drawable/ic_shortrip" />
+        app:srcCompat="@drawable/ic_comprehensive" />
 
     <TextView
         android:id="@+id/option2_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Go for a one-day trip \n $50"
+        android:text="Take a\n comprehensive one \n $120"
         android:textAlignment="center"
         android:textSize="20sp"
         android:layout_marginStart="20dp"
@@ -156,38 +156,38 @@
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="@+id/option2_label"
         app:layout_constraintTop_toBottomOf="@+id/option2_label"
-        app:srcCompat="@drawable/ic_academic" />
+        app:srcCompat="@drawable/ic_health" />
 
     <TextView
         android:id="@+id/option2_points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-5 points"
+        android:text="+10 points"
         android:textSize="16sp"
         android:layout_marginStart="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/option2_icon"
         app:layout_constraintStart_toEndOf="@+id/option2_icon"
         app:layout_constraintTop_toTopOf="@+id/option2_icon" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/option2_icon2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="@+id/option2_icon"
-        app:layout_constraintTop_toBottomOf="@+id/option2_icon"
-        app:srcCompat="@drawable/ic_social" />
+<!--    <androidx.appcompat.widget.AppCompatImageView-->
+<!--        android:id="@+id/option2_icon2"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/option2_icon"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/option2_icon"-->
+<!--        app:srcCompat="@drawable/ic_hobbies" />-->
 
-    <TextView
-        android:id="@+id/option2_points2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+15 points"
-        android:textSize="16sp"
-        android:layout_marginStart="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/option2_icon2"
-        app:layout_constraintStart_toEndOf="@+id/option2_icon2"
-        app:layout_constraintTop_toTopOf="@+id/option2_icon2" />
+<!--    <TextView-->
+<!--        android:id="@+id/option2_points2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="+3 points"-->
+<!--        android:textSize="16sp"-->
+<!--        android:layout_marginStart="5dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/option2_icon2"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/option2_icon2"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/option2_icon2" />-->
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/option3"
@@ -209,14 +209,14 @@
         app:layout_constraintBottom_toBottomOf="@+id/option3"
         app:layout_constraintStart_toStartOf="@+id/option3"
         app:layout_constraintTop_toTopOf="@+id/option3"
-        app:srcCompat="@drawable/ic_longtrip" />
+        app:srcCompat="@drawable/ic_specific" />
 
     <TextView
         android:id="@+id/option3_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Go across the country \n $200"
+        android:text="Take a specific\n examination \n $200"
         android:textAlignment="center"
         android:textSize="20sp"
         android:layout_marginStart="20dp"
@@ -230,37 +230,37 @@
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="@+id/option3_label"
         app:layout_constraintTop_toBottomOf="@+id/option3_label"
-        app:srcCompat="@drawable/ic_academic" />
+        app:srcCompat="@drawable/ic_health" />
 
     <TextView
         android:id="@+id/option3_points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-10 points"
+        android:text="+15 points"
         android:textSize="16sp"
         android:layout_marginStart="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/option3_icon"
         app:layout_constraintStart_toEndOf="@+id/option3_icon"
         app:layout_constraintTop_toTopOf="@+id/option3_icon" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/option3_icon2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="@+id/option3_icon"
-        app:layout_constraintTop_toBottomOf="@+id/option3_icon"
-        app:srcCompat="@drawable/ic_social" />
+<!--    <androidx.appcompat.widget.AppCompatImageView-->
+<!--        android:id="@+id/option3_icon2"-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/option3_icon"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/option3_icon"-->
+<!--        app:srcCompat="@drawable/ic_social" />-->
 
-    <TextView
-        android:id="@+id/option3_points2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+20 points"
-        android:textSize="16sp"
-        android:layout_marginStart="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/option3_icon2"
-        app:layout_constraintStart_toEndOf="@+id/option3_icon2"
-        app:layout_constraintTop_toTopOf="@+id/option3_icon2" />
+<!--    <TextView-->
+<!--        android:id="@+id/option3_points2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="+5 points"-->
+<!--        android:textSize="16sp"-->
+<!--        android:layout_marginStart="5dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/option3_icon2"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/option3_icon2"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/option3_icon2" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -35,8 +35,7 @@
                     android:layout_height="150dp"
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="30dp"
-                    android:background="@android:color/transparent"
-                    app:srcCompat="@drawable/ic_button_gray_150dp" />
+                    android:background="@drawable/button_effect_square" />
 
                 <ImageView
                     android:id="@+id/imageTask1"
@@ -66,8 +65,7 @@
                     android:layout_height="150dp"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="30dp"
-                    android:background="@android:color/transparent"
-                    app:srcCompat="@drawable/ic_button_gray_150dp" />
+                    android:background="@drawable/button_effect_square" />
 
                 <ImageView
                     android:id="@+id/imageTask2"
@@ -105,8 +103,7 @@
                     android:layout_height="150dp"
                     android:layout_alignParentStart="true"
                     android:layout_marginStart="30dp"
-                    android:background="@android:color/transparent"
-                    app:srcCompat="@drawable/ic_button_gray_150dp" />
+                    android:background="@drawable/button_effect_square" />
 
                 <ImageView
                     android:id="@+id/imageTask3"

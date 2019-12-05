@@ -74,10 +74,10 @@
                     android:layout_alignEnd="@+id/task2"
                     android:layout_alignBottom="@+id/task2"
                     android:layout_marginEnd="10dp"
-                    app:srcCompat="@drawable/ic_backpack" />
+                    app:srcCompat="@drawable/ic_laptop" />
 
                 <TextView
-                    android:id="@+id/equipment_label"
+                    android:id="@+id/laptop_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignStart="@+id/task2"
@@ -87,7 +87,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:textSize="18sp"
-                    android:text="Buy Equipment" />
+                    android:text="Buy Laptop" />
 
             </RelativeLayout>
 
@@ -159,141 +159,141 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_marginTop="20dp">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:layout_marginTop="20dp">-->
 
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/task5"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="30dp"
-                    android:background="@drawable/button_effect_square" />
+<!--                <androidx.appcompat.widget.AppCompatImageButton-->
+<!--                    android:id="@+id/task5"-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:layout_alignParentStart="true"-->
+<!--                    android:layout_marginStart="30dp"-->
+<!--                    android:background="@drawable/button_effect_square" />-->
 
-                <ImageView
-                    android:id="@+id/imageTask5"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_alignEnd="@+id/task5"
-                    android:layout_alignBottom="@+id/task5"
-                    android:layout_marginEnd="10dp"
-                    app:srcCompat="@drawable/ic_laptop" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageTask5"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:layout_alignEnd="@+id/task5"-->
+<!--                    android:layout_alignBottom="@+id/task5"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    app:srcCompat="@drawable/ic_backpack" />-->
 
-                <TextView
-                    android:id="@+id/laptop_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/task5"
-                    android:layout_alignEnd="@+id/task5"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:textSize="18sp"
-                    android:text="Buy New Laptop" />
+<!--                <TextView-->
+<!--                    android:id="@+id/equipment_label"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignStart="@+id/task5"-->
+<!--                    android:layout_alignEnd="@+id/task5"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:text="Buy Equipment" />-->
 
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/task6"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="30dp"
-                    android:background="@drawable/button_effect_square" />
+<!--                <androidx.appcompat.widget.AppCompatImageButton-->
+<!--                    android:id="@+id/task6"-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_marginEnd="30dp"-->
+<!--                    android:background="@drawable/button_effect_square" />-->
 
-                <ImageView
-                    android:id="@+id/imageTask6"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_alignEnd="@+id/task6"
-                    android:layout_alignBottom="@+id/task6"
-                    android:layout_marginEnd="10dp"
-                    app:srcCompat="@drawable/ic_desk_chair" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageTask6"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:layout_alignEnd="@+id/task6"-->
+<!--                    android:layout_alignBottom="@+id/task6"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    app:srcCompat="@drawable/ic_desk_chair" />-->
 
-                <TextView
-                    android:id="@+id/desk_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/task6"
-                    android:layout_alignEnd="@+id/task6"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:textSize="18sp"
-                    android:text="Buy Desk/Chair" />
+<!--                <TextView-->
+<!--                    android:id="@+id/desk_label"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignStart="@+id/task6"-->
+<!--                    android:layout_alignEnd="@+id/task6"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:text="Buy Desk/Chair" />-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:layout_marginTop="20dp">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:layout_marginTop="20dp">-->
 
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/task7"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginStart="30dp"
-                    android:background="@drawable/button_effect_square" />
+<!--                <androidx.appcompat.widget.AppCompatImageButton-->
+<!--                    android:id="@+id/task7"-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:layout_alignParentStart="true"-->
+<!--                    android:layout_marginStart="30dp"-->
+<!--                    android:background="@drawable/button_effect_square" />-->
 
-                <ImageView
-                    android:id="@+id/imageTask7"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_alignEnd="@+id/task7"
-                    android:layout_alignBottom="@+id/task7"
-                    android:layout_marginEnd="10dp"
-                    app:srcCompat="@drawable/ic_tablet" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageTask7"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:layout_alignEnd="@+id/task7"-->
+<!--                    android:layout_alignBottom="@+id/task7"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    app:srcCompat="@drawable/ic_tablet" />-->
 
-                <TextView
-                    android:id="@+id/tablet_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/task7"
-                    android:layout_alignEnd="@+id/task7"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:textSize="18sp"
-                    android:text="Buy New Tablet" />
+<!--                <TextView-->
+<!--                    android:id="@+id/tablet_label"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignStart="@+id/task7"-->
+<!--                    android:layout_alignEnd="@+id/task7"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:text="Buy New Tablet" />-->
 
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/task8"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="30dp"
-                    android:background="@drawable/button_effect_square" />
+<!--                <androidx.appcompat.widget.AppCompatImageButton-->
+<!--                    android:id="@+id/task8"-->
+<!--                    android:layout_width="150dp"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_marginEnd="30dp"-->
+<!--                    android:background="@drawable/button_effect_square" />-->
 
-                <ImageView
-                    android:id="@+id/imageTask8"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_alignEnd="@+id/task8"
-                    android:layout_alignBottom="@+id/task8"
-                    android:layout_marginEnd="10dp"
-                    app:srcCompat="@drawable/ic_building" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageTask8"-->
+<!--                    android:layout_width="80dp"-->
+<!--                    android:layout_height="80dp"-->
+<!--                    android:layout_alignEnd="@+id/task8"-->
+<!--                    android:layout_alignBottom="@+id/task8"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    app:srcCompat="@drawable/ic_building" />-->
 
-                <TextView
-                    android:id="@+id/tuition_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/task8"
-                    android:layout_alignEnd="@+id/task8"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:textSize="18sp"
-                    android:text="Pay for Tuition" />
+<!--                <TextView-->
+<!--                    android:id="@+id/tuition_label"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignStart="@+id/task8"-->
+<!--                    android:layout_alignEnd="@+id/task8"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginEnd="10dp"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:text="Pay for Tuition" />-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
 
         </LinearLayout>
 

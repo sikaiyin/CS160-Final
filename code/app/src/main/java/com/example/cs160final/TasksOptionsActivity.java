@@ -59,10 +59,10 @@ public class TasksOptionsActivity extends AppCompatActivity {
         task2 = (ImageButton)findViewById(R.id.task2);
         task3 = (ImageButton)findViewById(R.id.task3);
         task4 = (ImageButton)findViewById(R.id.task4);
-        task5 = (ImageButton)findViewById(R.id.task5);
-        task6 = (ImageButton)findViewById(R.id.task6);
-        task7 = (ImageButton)findViewById(R.id.task7);
-        task8 = (ImageButton)findViewById(R.id.task8);
+//        task5 = (ImageButton)findViewById(R.id.task5);
+//        task6 = (ImageButton)findViewById(R.id.task6);
+//        task7 = (ImageButton)findViewById(R.id.task7);
+//        task8 = (ImageButton)findViewById(R.id.task8);
 //        task1 = (ImageButton)findViewById(R.id.task1);
         tasklabel = (TextView)findViewById(R.id.tasklabel);
         note = (TextView)findViewById(R.id.note);
@@ -132,6 +132,171 @@ public class TasksOptionsActivity extends AppCompatActivity {
                                 documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
                                 documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
                                 Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity.class);
+                                startActivity(intent);
+                            }
+
+                        }
+                    }
+                });
+            }
+        });
+
+        task2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                userID = fAuth.getCurrentUser().getUid();
+                final DocumentReference documentReference = fStore.collection("users").document(userID);
+                documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            final DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                mTasks = (List<String>) document.get("fTaskList");
+                                if (mTasks.contains(tasklabel1.getText().toString())) {
+//                                    Toast.makeText(TasksOptionsActivity.this, "Task Already Completed!", Toast.LENGTH_SHORT).show();
+
+                                    // Pop-up message when a task is selected and provide user feedback that it has been completed
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(TasksOptionsActivity.this);
+
+                                    builder.setCancelable(true);
+                                    builder.setTitle("Task Already Completed!");
+                                    builder.setMessage("Please choose another task option.");
+
+                                    ImageView image = new ImageView(TasksOptionsActivity.this);
+                                    image.setImageResource(R.drawable.ic_warning);
+
+                                    builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            dialogInterface.cancel();
+                                        }
+                                    });
+                                    builder.setView(image);
+                                    builder.show();
+
+                                }
+//                                else {
+//                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+//                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
+//                                    Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity.class);
+//                                    startActivity(intent);
+//                                }
+
+                                // TESTING: use this line of code if you wish to by passed Completed Tasks
+                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
+                                Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity1Academic3Laptop.class);
+                                startActivity(intent);
+                            }
+
+                        }
+                    }
+                });
+            }
+        });
+
+        task3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                userID = fAuth.getCurrentUser().getUid();
+                final DocumentReference documentReference = fStore.collection("users").document(userID);
+                documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            final DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                mTasks = (List<String>) document.get("fTaskList");
+                                if (mTasks.contains(tasklabel1.getText().toString())) {
+//                                    Toast.makeText(TasksOptionsActivity.this, "Task Already Completed!", Toast.LENGTH_SHORT).show();
+
+                                    // Pop-up message when a task is selected and provide user feedback that it has been completed
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(TasksOptionsActivity.this);
+
+                                    builder.setCancelable(true);
+                                    builder.setTitle("Task Already Completed!");
+                                    builder.setMessage("Please choose another task option.");
+
+                                    ImageView image = new ImageView(TasksOptionsActivity.this);
+                                    image.setImageResource(R.drawable.ic_warning);
+
+                                    builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            dialogInterface.cancel();
+                                        }
+                                    });
+                                    builder.setView(image);
+                                    builder.show();
+
+                                }
+//                                else {
+//                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+//                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
+//                                    Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity.class);
+//                                    startActivity(intent);
+//                                }
+
+                                // TESTING: use this line of code if you wish to by passed Completed Tasks
+                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
+                                Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity1Academic4Supplies.class);
+                                startActivity(intent);
+                            }
+
+                        }
+                    }
+                });
+            }
+        });
+
+        task4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                userID = fAuth.getCurrentUser().getUid();
+                final DocumentReference documentReference = fStore.collection("users").document(userID);
+                documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            final DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                mTasks = (List<String>) document.get("fTaskList");
+                                if (mTasks.contains(tasklabel1.getText().toString())) {
+//                                    Toast.makeText(TasksOptionsActivity.this, "Task Already Completed!", Toast.LENGTH_SHORT).show();
+
+                                    // Pop-up message when a task is selected and provide user feedback that it has been completed
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(TasksOptionsActivity.this);
+
+                                    builder.setCancelable(true);
+                                    builder.setTitle("Task Already Completed!");
+                                    builder.setMessage("Please choose another task option.");
+
+                                    ImageView image = new ImageView(TasksOptionsActivity.this);
+                                    image.setImageResource(R.drawable.ic_warning);
+
+                                    builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            dialogInterface.cancel();
+                                        }
+                                    });
+                                    builder.setView(image);
+                                    builder.show();
+
+                                }
+//                                else {
+//                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+//                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
+//                                    Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity.class);
+//                                    startActivity(intent);
+//                                }
+
+                                // TESTING: use this line of code if you wish to by passed Completed Tasks
+                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
+                                Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity1Academic2Tutor.class);
                                 startActivity(intent);
                             }
 

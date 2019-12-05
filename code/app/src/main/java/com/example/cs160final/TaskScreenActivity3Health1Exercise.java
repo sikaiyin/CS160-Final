@@ -96,8 +96,8 @@ public class TaskScreenActivity3Health1Exercise extends AppCompatActivity {
                             if(document.exists()){
                                 currentLabel=label1;
                                 documentReference.update("fOption", FieldValue.arrayUnion(currentLabel.getText() + "\n At  " + currentTime.toString()));
-                                documentReference.update("fCurrentBalance", FieldValue.arrayUnion(Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 0)));
-                                documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 0));
+                                documentReference.update("fCurrentBalance", FieldValue.arrayUnion(Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 2)));
+                                documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 2));
                                 documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) + 0));
                                 documentReference.update("fSocial", Integer.toString(Integer.parseInt(document.get("fSocial").toString()) + 3));
                                 documentReference.update("fHealth", Integer.toString(Integer.parseInt(document.get("fHealth").toString()) + 5))
@@ -143,8 +143,8 @@ public class TaskScreenActivity3Health1Exercise extends AppCompatActivity {
                             if(document.exists()){
                                 currentLabel=label2;
                                 documentReference.update("fOption", FieldValue.arrayUnion(currentLabel.getText() + "\n At  " + currentTime.toString()));
-                                documentReference.update("fCurrentBalance", FieldValue.arrayUnion(Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 0)));
-                                documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 0));
+                                documentReference.update("fCurrentBalance", FieldValue.arrayUnion(Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 2)));
+                                documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 2));
                                 documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) + 0));
                                 documentReference.update("fSocial", Integer.toString(Integer.parseInt(document.get("fSocial").toString()) - 0));
                                 documentReference.update("fHealth", Integer.toString(Integer.parseInt(document.get("fHealth").toString()) + 5));
