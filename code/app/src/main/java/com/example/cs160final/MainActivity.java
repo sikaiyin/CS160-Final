@@ -66,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
+    String Counter;
+    Integer Week;
+    Integer Month;
     private DatabaseReference mDatabaseRef;
     private StorageReference mStorageRef;
 
@@ -119,8 +122,18 @@ public class MainActivity extends AppCompatActivity {
                 if (task.isSuccessful()){
                     DocumentSnapshot document = task.getResult();
                     if(document.exists()){
+                        Counter = document.get("fWeekCounter").toString();
+                        if(Integer.parseInt(Counter) > 32){
+                            Toast.makeText(MainActivity.this, "Congrats! You Pass this Semester!", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                        Week = (Integer.parseInt(Counter) / 2) % 4 + 1;
+                        Month = (Integer.parseInt(Counter) / 2) / 4 + 1;
+                        int id_week = getResources().getIdentifier("com.example.cs160final:drawable/ic_calendar_week_" + Week.toString() + "_80dp", null, null);
+                        week.setImageResource(id_week);
+                        int id_month = getResources().getIdentifier("com.example.cs160final:drawable/ic_calendar_month_" + Month.toString() + "_80dp", null, null);
+                        month.setImageResource(id_month);
                         username.setText(document.get("fName").toString());
-                        term.setText(document.get("fWeek").toString());
                         pbbudget.setProgress((int)(Integer.parseInt(document.get("fBudget").toString()) / 10));
                         pbacademic.setProgress(Integer.parseInt(document.get("fAcademics").toString()));
                         pbsocial.setProgress(Integer.parseInt(document.get("fSocial").toString()));

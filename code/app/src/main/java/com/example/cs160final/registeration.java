@@ -32,6 +32,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
@@ -183,12 +184,13 @@ public class registeration extends AppCompatActivity {
                             user.put("fName", name);
                             user.put("fEmail", email);
                             user.put("fGrade", grade);
-                            user.put("fWeek", "1");
+                            user.put("fWeekCounter", "0");
                             user.put("fBudget", "1000");
                             user.put("fAcademics", "50");
                             user.put("fSocial", "50");
                             user.put("fHealth", "50");
                             user.put("fHobbies", "50");
+                            documentReference.update("fTaskList", FieldValue.arrayUnion(""));
                             if(mUploadTask != null && mUploadTask.isInProgress()){
                                 Toast.makeText(registeration.this, "Upload In Progress", Toast.LENGTH_SHORT).show();
                             }else{
