@@ -4,66 +4,224 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mainColor"
     tools:context=".MainActivity">
-
 
     <TextView
         android:id="@+id/tasklabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
+        android:layout_marginTop="20dp"
         android:text="Buying Textbooks"
-        app:layout_constraintStart_toEndOf="@+id/home"
-        tools:layout_editor_absoluteY="44dp" />
-
-    <ImageButton
-        android:id="@+id/home"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="16dp"
-        android:background="#666666"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <androidx.appcompat.widget.AppCompatImageButton-->
+    <!--        android:id="@+id/home"-->
+    <!--        android:layout_width="40dp"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        android:layout_marginStart="5dp"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        android:background="#00666666"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:srcCompat="@drawable/ic_home_button_white_40dp"/>-->
 
     <TextView
         android:id="@+id/explanation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:text="You are midway through the term and you have yet to purchase your textbooks"
+        android:layout_marginTop="0dp"
+        android:text="Please select an option you want to perform."
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/home" />
+        app:layout_constraintTop_toBottomOf="@+id/tasklabel" />
 
-    <ImageButton
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/option1"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="200dp"
-        android:background="#666666"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:background="@drawable/button_effect"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/explanation" />
 
-    <ImageButton
-        android:id="@+id/option2"
-        android:layout_width="200dp"
+    <ImageView
+        android:id="@+id/imageOption1"
+        android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="50dp"
+        android:layout_alignEnd="@+id/option1"
+        android:layout_alignBottom="@+id/option1"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/option1"
+        app:layout_constraintStart_toStartOf="@+id/option1"
+        app:layout_constraintTop_toTopOf="@+id/option1"
+        app:srcCompat="@drawable/ic_amazon_logo" />
+
+    <TextView
+        android:id="@+id/option1_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:text="Buy from Amazon \n $100"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/option1"
+        app:layout_constraintTop_toTopOf="@+id/option1" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/option1_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginTop="20dp"
-        android:background="#666666"
+        app:layout_constraintStart_toStartOf="@+id/option1_label"
+        app:layout_constraintTop_toBottomOf="@+id/option1_label"
+        app:srcCompat="@drawable/ic_academic" />
+
+    <TextView
+        android:id="@+id/option1_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+20 points"
+        android:textSize="16sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/option1_icon"
+        app:layout_constraintStart_toEndOf="@+id/option1_icon"
+        app:layout_constraintTop_toTopOf="@+id/option1_icon" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/option2"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_effect"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/option1" />
 
-    <ImageButton
-        android:id="@+id/option3"
-        android:layout_width="200dp"
+    <ImageView
+        android:id="@+id/imageOption2"
+        android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="50dp"
+        android:layout_alignEnd="@+id/option2"
+        android:layout_alignBottom="@+id/option2"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/option2"
+        app:layout_constraintStart_toStartOf="@+id/option2"
+        app:layout_constraintTop_toTopOf="@+id/option2"
+        app:srcCompat="@drawable/ic_hacker" />
+
+    <TextView
+        android:id="@+id/option2_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:text="Download online PDFs \n $0"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/option2"
+        app:layout_constraintTop_toTopOf="@+id/option2" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/option2_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginTop="20dp"
-        android:background="#666666"
+        app:layout_constraintStart_toStartOf="@+id/option2_label"
+        app:layout_constraintTop_toBottomOf="@+id/option2_label"
+        app:srcCompat="@drawable/ic_academic" />
+
+    <TextView
+        android:id="@+id/option2_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+10 points"
+        android:textSize="16sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/option2_icon"
+        app:layout_constraintStart_toEndOf="@+id/option2_icon"
+        app:layout_constraintTop_toTopOf="@+id/option2_icon" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/option3"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_effect"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/option2" />
+
+    <ImageView
+        android:id="@+id/imageOption3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignEnd="@+id/option3"
+        android:layout_alignBottom="@+id/option3"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/option3"
+        app:layout_constraintStart_toStartOf="@+id/option3"
+        app:layout_constraintTop_toTopOf="@+id/option3"
+        app:srcCompat="@drawable/ic_super_friend" />
+
+    <TextView
+        android:id="@+id/option3_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:text="Borrow from Friends \n $0"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/option3"
+        app:layout_constraintTop_toTopOf="@+id/option3" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/option3_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/option3_label"
+        app:layout_constraintTop_toBottomOf="@+id/option3_label"
+        app:srcCompat="@drawable/ic_academic" />
+
+    <TextView
+        android:id="@+id/option3_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+10 points"
+        android:textSize="16sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/option3_icon"
+        app:layout_constraintStart_toEndOf="@+id/option3_icon"
+        app:layout_constraintTop_toTopOf="@+id/option3_icon" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/option3_icon2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="@+id/option3_icon"
+        app:layout_constraintTop_toBottomOf="@+id/option3_icon"
+        app:srcCompat="@drawable/ic_social" />
+
+    <TextView
+        android:id="@+id/option3_points2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+5 points"
+        android:textSize="16sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/option3_icon2"
+        app:layout_constraintStart_toEndOf="@+id/option3_icon2"
+        app:layout_constraintTop_toTopOf="@+id/option3_icon2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class login extends AppCompatActivity {
 
@@ -41,12 +42,6 @@ public class login extends AppCompatActivity {
 
         if(fAuth.getCurrentUser() != null){
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            if(getIntent().hasExtra("ImagebyteArray")) {
-                intent.putExtra("PhotobyteArray", getIntent().getByteArrayExtra("ImagebyteArray"));
-            }
-            if(getIntent().hasExtra("User")) {
-                intent.putExtra("UserName", getIntent().getStringExtra("User"));
-            }
             startActivity(intent);
             finish();
         }
@@ -78,12 +73,6 @@ public class login extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(login.this, "Sign In Successfully", Toast.LENGTH_SHORT).show();
                             Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
-                            if(getIntent().hasExtra("ImagebyteArray")) {
-                                intent2.putExtra("PhotobyteArray", getIntent().getByteArrayExtra("ImagebyteArray"));
-                            }
-                            if(getIntent().hasExtra("User")) {
-                                intent2.putExtra("UserName", getIntent().getStringExtra("User"));
-                            }
                             startActivity(intent2);
                         }else{
                             Toast.makeText(login.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

@@ -4,260 +4,394 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mainColor"
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/performtask2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:onClick="logout"
-        android:text="Sign out"
+        android:text="Logout"
+        android:textColor="@color/darkGray"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.758"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.973" />
-
-    <TextView
-        android:id="@+id/weeklabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="150dp"
-        android:text="Week:"
-        app:layout_constraintStart_toEndOf="@+id/month"
-        app:layout_constraintTop_toBottomOf="@+id/mylearnings" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/termlabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="100dp"
         android:text="Term:"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myspendings" />
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <TextView
         android:id="@+id/term"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginStart="5dp"
         android:text="Fall"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/termlabel"
         app:layout_constraintStart_toEndOf="@+id/termlabel"
-        app:layout_constraintTop_toBottomOf="@+id/myspendings" />
+        app:layout_constraintTop_toTopOf="@+id/termlabel" />
 
-    <TextView
-        android:id="@+id/monthlabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="29dp"
-        android:text="Month:"
-        app:layout_constraintStart_toEndOf="@+id/term"
-        app:layout_constraintTop_toBottomOf="@+id/userpicture" />
+    <!--    <androidx.appcompat.widget.AppCompatImageButton-->
+    <!--        android:id="@+id/mylearnings"-->
+    <!--        android:layout_width="70dp"-->
+    <!--        android:layout_height="70dp"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        android:layout_marginEnd="5dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:srcCompat="@mipmap/ic_launcher" />-->
 
-    <TextView
-        android:id="@+id/week"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="150dp"
-        android:text="1 of 4"
-        app:layout_constraintStart_toEndOf="@+id/weeklabel"
-        app:layout_constraintTop_toBottomOf="@+id/mylearnings" />
-
-    <TextView
-        android:id="@+id/month"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="29dp"
-        android:text="2 of 4"
-        app:layout_constraintStart_toEndOf="@+id/monthlabel"
-        app:layout_constraintTop_toBottomOf="@+id/userpicture" />
-
-    <ImageButton
+    <Button
         android:id="@+id/mylearnings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="30dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="My Learnings"
+        android:textAllCaps="false"
+        android:textColor="@color/darkGray"
+        android:background="@drawable/button_effect"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/userpicture"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="45dp"
         android:text="User Name"
-        app:layout_constraintEnd_toStartOf="@+id/mylearnings"
-        app:layout_constraintStart_toEndOf="@+id/myspendings"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/myspendings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintEnd_toStartOf="@+id/userpicture"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher" />
-
-    <ImageView
-        android:id="@+id/userpicture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="41dp"
+        android:textSize="22sp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:layout_editor_absoluteY="45dp" />
+
+    <!--    <androidx.appcompat.widget.AppCompatImageButton-->
+    <!--        android:id="@+id/myspendings"-->
+    <!--        android:layout_width="70dp"-->
+    <!--        android:layout_height="70dp"-->
+    <!--        android:layout_marginStart="5dp"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:srcCompat="@mipmap/ic_launcher" />-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/myspendings"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="My Spendings"
+        android:textAllCaps="false"
+        android:textColor="@color/darkGray"
+        android:background="@drawable/button_effect"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="155dp"
+        android:layout_height="155dp"
+        android:layout_marginTop="15dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="80dp">
+
+            <ImageView
+                android:id="@+id/userpicture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/userpicture"-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="150dp"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/logo"-->
+<!--        app:srcCompat="@drawable/user" />-->
+
+    <TextView
+        android:id="@+id/yearlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="30dp"
+        android:text="Year:"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/term"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <TextView
         android:id="@+id/yearofstudy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="185dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginStart="5dp"
         android:text="Junior"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/monthlabel" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/yearlabel"
+        app:layout_constraintStart_toEndOf="@+id/yearlabel"
+        app:layout_constraintTop_toTopOf="@+id/yearlabel" />
 
     <ProgressBar
         android:id="@+id/pbbudget"
-        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="31dp"
-        android:indeterminateTint="@android:color/holo_orange_dark"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="280dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="335dp"
+        android:layout_marginEnd="25dp"
+        android:progressTint="#24E606"
         android:max="100"
         android:progress="50"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivbudget"
-        app:layout_constraintTop_toBottomOf="@+id/yearofstudy" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <TextView
+        android:id="@+id/budget_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Budget"
+        android:textColor="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="@+id/pbbudget"
+        app:layout_constraintStart_toStartOf="@+id/pbbudget"
+        app:layout_constraintTop_toTopOf="@+id/pbbudget" />
+
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iventertain"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pbentertain"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivhealth"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:layout_constraintTop_toTopOf="@+id/pbentertain"
+        app:srcCompat="@drawable/ic_hobbies" />
 
     <ProgressBar
         android:id="@+id/pbentertain"
-        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="25dp"
         android:indeterminateTint="@android:color/holo_orange_dark"
         android:max="100"
         android:progress="50"
         app:layout_constraintStart_toEndOf="@+id/iventertain"
         app:layout_constraintTop_toBottomOf="@+id/pbhealth" />
 
-    <ImageView
+    <TextView
+        android:id="@+id/hobbies_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Hobbies"
+        android:textColor="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="@+id/pbentertain"
+        app:layout_constraintStart_toStartOf="@+id/pbentertain"
+        app:layout_constraintTop_toTopOf="@+id/pbentertain" />
+
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivhealth"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pbhealth"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivsocial"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:layout_constraintTop_toTopOf="@+id/pbhealth"
+        app:srcCompat="@drawable/ic_health" />
 
     <ProgressBar
         android:id="@+id/pbhealth"
-        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="43dp"
+        android:layout_marginTop="25dp"
         android:indeterminateTint="@android:color/holo_orange_dark"
         android:max="100"
         android:progress="50"
         app:layout_constraintStart_toEndOf="@+id/ivhealth"
         app:layout_constraintTop_toBottomOf="@+id/pbsocial" />
 
-    <ImageView
+    <TextView
+        android:id="@+id/health_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Health"
+        android:textColor="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="@+id/pbhealth"
+        app:layout_constraintStart_toStartOf="@+id/pbhealth"
+        app:layout_constraintTop_toTopOf="@+id/pbhealth" />
+
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivsocial"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pbsocial"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivacademic"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:layout_constraintTop_toTopOf="@+id/pbsocial"
+        app:srcCompat="@drawable/ic_social" />
 
     <ProgressBar
         android:id="@+id/pbsocial"
-        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="25dp"
         android:indeterminateTint="@android:color/holo_orange_dark"
         android:max="100"
         android:progress="50"
         app:layout_constraintStart_toEndOf="@+id/ivsocial"
         app:layout_constraintTop_toBottomOf="@+id/pbacademic" />
 
-    <ImageView
+    <TextView
+        android:id="@+id/social_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Social"
+        android:textColor="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="@+id/pbsocial"
+        app:layout_constraintStart_toStartOf="@+id/pbsocial"
+        app:layout_constraintTop_toTopOf="@+id/pbsocial" />
+
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivacademic"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pbacademic"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivbudget"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:layout_constraintTop_toTopOf="@+id/pbacademic"
+        app:srcCompat="@drawable/ic_academic" />
 
     <ProgressBar
         android:id="@+id/pbacademic"
-        style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="250dp"
+        android:layout_height="25dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="50dp"
         android:indeterminateTint="@android:color/holo_orange_dark"
         android:max="100"
         android:progress="50"
         app:layout_constraintStart_toEndOf="@+id/ivacademic"
         app:layout_constraintTop_toBottomOf="@+id/pbbudget" />
 
-    <ImageView
+    <TextView
+        android:id="@+id/academics_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Academics"
+        android:textColor="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="@+id/pbacademic"
+        app:layout_constraintStart_toStartOf="@id/pbacademic"
+        app:layout_constraintTop_toTopOf="@+id/pbacademic" />
+
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivbudget"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="57dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pbbudget"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/termlabel"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:layout_constraintTop_toTopOf="@+id/pbbudget"
+        app:srcCompat="@drawable/ic_budget" />
 
 
     <Button
         android:id="@+id/performtask"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:text="Perform Task"
+        android:textAllCaps="false"
+        android:textColor="@color/darkGray"
+        android:background="@drawable/button_effect"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/monthlabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="28dp"
-        android:text="Perform Task"
+        android:text="Month"
+        android:textSize="18sp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/month"
+        app:layout_constraintEnd_toEndOf="@+id/month"
+        app:layout_constraintStart_toStartOf="@+id/month" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/month"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toStartOf="@+id/cardView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pbentertain" />
+        app:layout_constraintTop_toBottomOf="@id/myspendings"
+        app:srcCompat="@drawable/ic_calendar_month_1_80dp" />
+
+    <TextView
+        android:id="@+id/weeklabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Week"
+        android:textSize="18sp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/week"
+        app:layout_constraintEnd_toEndOf="@+id/week"
+        app:layout_constraintStart_toStartOf="@+id/week" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/week"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardView2"
+        app:layout_constraintTop_toBottomOf="@id/mylearnings"
+        app:srcCompat="@drawable/ic_calendar_week_1_80dp" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        app:layout_constraintEnd_toStartOf="@+id/mylearnings"
+        app:layout_constraintStart_toEndOf="@+id/myspendings"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_logo_red_350dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

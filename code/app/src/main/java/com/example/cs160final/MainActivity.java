@@ -1,10 +1,12 @@
 package com.example.cs160final;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,21 +14,43 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton myspendings;
+    Button myspendings;
     TextView username;
-    ImageButton mylearnings;
+    Button mylearnings;
     ImageView userpicture;
     TextView termlabel;
     TextView term;
     TextView monthlabel;
-    TextView month;
+    ImageView month;
     TextView weeklabel;
-    TextView week;
+    ImageView week;
     TextView yearofstudy;
     ImageView ivbudget;
     ProgressBar pbbudget;
@@ -39,6 +63,14 @@ public class MainActivity extends AppCompatActivity {
     ImageView iventertain;
     ProgressBar pbentertain;
     Button performtask;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+    String userId;
+    String Counter;
+    Integer Week;
+    Integer Month;
+    private DatabaseReference mDatabaseRef;
+    private StorageReference mStorageRef;
 
 
     @Override
@@ -46,16 +78,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        myspendings = (ImageButton)findViewById(R.id.myspendings);
+        myspendings = (Button)findViewById(R.id.myspendings);
         username = (TextView)findViewById(R.id.username);
-        mylearnings = (ImageButton)findViewById(R.id.mylearnings);
+        mylearnings = (Button)findViewById(R.id.mylearnings);
         userpicture = (ImageView)findViewById(R.id.userpicture);
         termlabel = (TextView)findViewById(R.id.termlabel);
         term = (TextView)findViewById(R.id.term);
         monthlabel = (TextView)findViewById(R.id.monthlabel);
-        month = (TextView)findViewById(R.id.month);
+        month = (ImageView)findViewById(R.id.month);
         weeklabel = (TextView)findViewById(R.id.weeklabel);
-        week = (TextView)findViewById(R.id.week);
+        week = (ImageView) findViewById(R.id.week);
         yearofstudy = (TextView)findViewById(R.id.yearofstudy);
         ivbudget = (ImageView)findViewById(R.id.ivbudget);
         pbbudget = (ProgressBar)findViewById(R.id.pbbudget);
@@ -69,16 +101,49 @@ public class MainActivity extends AppCompatActivity {
         pbentertain = (ProgressBar)findViewById(R.id.pbentertain);
         performtask = (Button)findViewById(R.id.performtask);
 
-        if(getIntent().hasExtra("PhotobyteArray")) {
-            Bitmap bitmap = BitmapFactory.decodeByteArray(
-                    getIntent().getByteArrayExtra("PhotobyteArray"), 0, getIntent().getByteArrayExtra("PhotobyteArray").length);
-            userpicture.setImageBitmap(bitmap);
-        }
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        userId = fAuth.getCurrentUser().getUid();
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("user_profile");
+        mStorageRef = FirebaseStorage.getInstance().getReference("user_profile");
 
-        if(getIntent().hasExtra("UserName")) {
-            String name = getIntent().getStringExtra("UserName");
-            username.setText(name);
-        }
+
+        mStorageRef.child(userId + "." + "jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Picasso.get().load(uri).into(userpicture);
+            }
+        });
+
+        final DocumentReference documentReference = fStore.collection("users").document(userId);
+        documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()){
+                    DocumentSnapshot document = task.getResult();
+                    if(document.exists()){
+                        Counter = document.get("fWeekCounter").toString();
+                        if(Integer.parseInt(Counter) > 32){
+                            Toast.makeText(MainActivity.this, "Congrats! You Pass this Semester!", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                        Week = (Integer.parseInt(Counter) / 2) % 4 + 1;
+                        Month = (Integer.parseInt(Counter) / 2) / 4 + 1;
+                        int id_week = getResources().getIdentifier("com.example.cs160final:drawable/ic_calendar_week_" + Week.toString() + "_80dp", null, null);
+                        week.setImageResource(id_week);
+                        int id_month = getResources().getIdentifier("com.example.cs160final:drawable/ic_calendar_month_" + Month.toString() + "_80dp", null, null);
+                        month.setImageResource(id_month);
+                        username.setText(document.get("fName").toString());
+                        pbbudget.setProgress((int)(Integer.parseInt(document.get("fBudget").toString()) / 10));
+                        pbacademic.setProgress(Integer.parseInt(document.get("fAcademics").toString()));
+                        pbsocial.setProgress(Integer.parseInt(document.get("fSocial").toString()));
+                        pbhealth.setProgress(Integer.parseInt(document.get("fHealth").toString()));
+                        pbentertain.setProgress(Integer.parseInt(document.get("fHobbies").toString()));
+                    }
+                }
+            }
+        });
+
     }
     @Override
     protected void onStart()
@@ -96,6 +161,8 @@ public class MainActivity extends AppCompatActivity {
         // progressbar.getProgressDrawable().setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
         // to change the color of the bar
 
+
+
         performtask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,15 +173,17 @@ public class MainActivity extends AppCompatActivity {
         myspendings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, com.example.cs160final.MySpendingsActivity.class);
+                Intent intent = new Intent(MainActivity.this, com.example.cs160final.transaction.class);
                 startActivity(intent);
+
             }
         });
         mylearnings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, com.example.cs160final.MyLearningsActivity.class);
+                Intent intent = new Intent(MainActivity.this, com.example.cs160final.list.class);
                 startActivity(intent);
+
             }
         });
     }

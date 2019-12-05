@@ -36,15 +36,11 @@ public class CategoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
-        home = (ImageButton)findViewById(R.id.home);
+//        home = (ImageButton)findViewById(R.id.home);
         taskcategory1 = (ImageButton)findViewById(R.id.taskcategory1);
         taskcategory2 = (ImageButton)findViewById(R.id.taskcategory2);
         taskcategory3 = (ImageButton)findViewById(R.id.taskcategory3);
         taskcategory4 = (ImageButton)findViewById(R.id.taskcategory4);
-        taskcategory5 = (ImageButton)findViewById(R.id.taskcategory5);
-        taskcategory6 = (ImageButton)findViewById(R.id.taskcategory6);
-        taskcategory7 = (ImageButton)findViewById(R.id.taskcategory7);
-        taskcategory8 = (ImageButton)findViewById(R.id.taskcategory8);
 //        task1 = (ImageButton)findViewById(R.id.task1);
         tasklabel = (TextView)findViewById(R.id.tasklabel);
         note = (TextView)findViewById(R.id.note);
@@ -55,18 +51,32 @@ public class CategoryActivity extends AppCompatActivity {
     {
         super.onStart();
 
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CategoryActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
+//        home.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(CategoryActivity.this, MainActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         taskcategory1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CategoryActivity.this, TasksOptionsActivity.class);
+                startActivity(intent);
+            }
+        });
+        taskcategory2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CategoryActivity.this, TasksOptionsActivity2Social.class);
+                startActivity(intent);
+            }
+        });
+        taskcategory3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CategoryActivity.this, TasksOptionsActivity3Health.class);
                 startActivity(intent);
             }
         });
