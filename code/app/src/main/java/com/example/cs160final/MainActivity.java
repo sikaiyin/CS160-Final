@@ -124,7 +124,9 @@ public class MainActivity extends AppCompatActivity {
                     if(document.exists()){
                         Counter = document.get("fWeekCounter").toString();
                         if(Integer.parseInt(Counter) > 64){
-                            Toast.makeText(MainActivity.this, "Congratulations! You passed all tasks!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Congratulations! You passed this Game!", Toast.LENGTH_SHORT).show();
+                            FirebaseAuth.getInstance().signOut();
+                            startActivity(new Intent(getApplicationContext(), login.class));
                             finish();
                         }else if(Integer.parseInt(Counter) > 32){
                             Counter = Integer.toString(Integer.parseInt(Counter) - 32);
@@ -143,6 +145,18 @@ public class MainActivity extends AppCompatActivity {
                             week.setImageResource(id_week);
                             int id_month = getResources().getIdentifier("com.example.cs160final:drawable/ic_calendar_month_" + Month.toString() + "_80dp", null, null);
                             month.setImageResource(id_month);
+                        }
+                        if(Integer.parseInt(document.get("fBudget").toString()) < 0 ||
+                                Integer.parseInt(document.get("fAcademics").toString()) < 0 ||
+                                Integer.parseInt(document.get("fSocial").toString()) < 0 ||
+                                Integer.parseInt(document.get("fHealth").toString()) < 0 ||
+                                Integer.parseInt(document.get("fHobbies").toString()) < 0 )
+                        {
+                            Toast.makeText(MainActivity.this, "Game Over",
+                                    Toast.LENGTH_SHORT).show();
+                            FirebaseAuth.getInstance().signOut();
+                            startActivity(new Intent(getApplicationContext(), login.class));
+                            finish();
                         }
                         yearofstudy.setText(document.get("fGrade").toString());
                         username.setText(document.get("fName").toString());
