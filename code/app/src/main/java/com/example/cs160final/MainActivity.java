@@ -72,6 +72,12 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference mDatabaseRef;
     private StorageReference mStorageRef;
 
+    TextView bugetamount;
+    TextView academicscore;
+    TextView socialscore;
+    TextView heathscore;
+    TextView hobbyscore;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +106,11 @@ public class MainActivity extends AppCompatActivity {
         iventertain = (ImageView)findViewById(R.id.iventertain);
         pbentertain = (ProgressBar)findViewById(R.id.pbentertain);
         performtask = (Button)findViewById(R.id.performtask);
+        bugetamount = (TextView)findViewById(R.id.budgetamount);
+        academicscore = (TextView)findViewById(R.id.academicscore);
+        socialscore = (TextView)findViewById(R.id.socialscore);
+        heathscore = (TextView)findViewById(R.id.healthscore);
+        hobbyscore = (TextView)findViewById(R.id.hobbyscore);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -165,6 +176,14 @@ public class MainActivity extends AppCompatActivity {
                         pbsocial.setProgress(Integer.parseInt(document.get("fSocial").toString()));
                         pbhealth.setProgress(Integer.parseInt(document.get("fHealth").toString()));
                         pbentertain.setProgress(Integer.parseInt(document.get("fHobbies").toString()));
+
+                        // Displaying scores/stats of progress bars for user
+                        bugetamount.setText("$" + (document.get("fBudget").toString()));
+                        academicscore.setText(document.get("fAcademics").toString() + "%");
+                        socialscore.setText(document.get("fSocial").toString() + "%");
+                        heathscore.setText(document.get("fHealth").toString() + "%");
+                        hobbyscore.setText(document.get("fHobbies").toString() + "%");
+
                     }
                 }
             }
