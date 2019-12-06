@@ -42,6 +42,17 @@
         <activity android:name=".LearningScreenActivity3Health2Examination"/>
         <activity android:name=".TaskScreenActivity3Health3Weighing"/>
         <activity android:name=".LearningScreenActivity3Health3Weighing"/>
+        <activity android:name=".TaskScreenActivity2Social2Dinner"/>
+        <activity android:name=".LearningScreenActivity2Social2Dinner"/>
+        <activity android:name=".TaskScreenActivity2Social3Party"/>
+        <activity android:name=".LearningScreenActivity2Social3Party"/>
+        <activity android:name=".TaskScreenActivity4Hobbies1Game"/>
+        <activity android:name=".TasksOptionsActivity4Hobbies"/>
+        <activity android:name=".LearningScreenActivity4Hobbies1Game"/>
+        <activity android:name=".TaskScreenActivity4Hobbies2Video"/>
+        <activity android:name=".LearningScreenActivity4Hobbies2Video"/>
+        <activity android:name=".TaskScreenActivity4Hobbies3Concert"/>
+        <activity android:name=".LearningScreenActivity4Hobbies3Concert"/>
     </application>
 
 </manifest>

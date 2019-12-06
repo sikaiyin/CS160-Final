@@ -80,5 +80,12 @@ public class CategoryActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        taskcategory4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CategoryActivity.this, TasksOptionsActivity4Hobbies.class);
+                startActivity(intent);
+            }
+        });
     }
 }

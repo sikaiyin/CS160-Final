@@ -38,6 +38,8 @@ public class TasksOptionsActivity3Health extends AppCompatActivity {
     ImageButton task7;
     ImageButton task8;
     TextView tasklabel1;
+    TextView tasklabel2;
+    TextView tasklabel3;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userID;
@@ -67,6 +69,8 @@ public class TasksOptionsActivity3Health extends AppCompatActivity {
         tasklabel = (TextView)findViewById(R.id.tasklabel);
         note = (TextView)findViewById(R.id.note);
         tasklabel1 = (TextView)findViewById(R.id.taskOption1_label);
+        tasklabel2 = (TextView)findViewById(R.id.taskOption2_label);
+        tasklabel3 = (TextView)findViewById(R.id.taskOption3_label);
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
         userID = fAuth.getCurrentUser().getUid();
@@ -181,7 +185,7 @@ public class TasksOptionsActivity3Health extends AppCompatActivity {
                             final DocumentSnapshot document = task.getResult();
                             if (document.exists()) {
                                 mTasks = (List<String>) document.get("fTaskList");
-                                if (mTasks.contains(tasklabel1.getText().toString())) {
+                                if (mTasks.contains(tasklabel2.getText().toString())) {
 //                                    Toast.makeText(TasksOptionsActivity.this, "Task Already Completed!", Toast.LENGTH_SHORT).show();
 
                                     // Pop-up message when a task is selected and provide user feedback that it has been completed
@@ -213,7 +217,7 @@ public class TasksOptionsActivity3Health extends AppCompatActivity {
 
                                 // TESTING: use this line of code if you wish to by passed Completed Tasks
                                 documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
+                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel2.getText().toString()));
                                 Intent intent = new Intent(TasksOptionsActivity3Health.this, TaskScreenActivity3Health3Weighing.class);
                                 startActivity(intent);
                             }
@@ -236,7 +240,7 @@ public class TasksOptionsActivity3Health extends AppCompatActivity {
                             final DocumentSnapshot document = task.getResult();
                             if (document.exists()) {
                                 mTasks = (List<String>) document.get("fTaskList");
-                                if (mTasks.contains(tasklabel1.getText().toString())) {
+                                if (mTasks.contains(tasklabel3.getText().toString())) {
 //                                    Toast.makeText(TasksOptionsActivity.this, "Task Already Completed!", Toast.LENGTH_SHORT).show();
 
                                     // Pop-up message when a task is selected and provide user feedback that it has been completed
@@ -268,7 +272,7 @@ public class TasksOptionsActivity3Health extends AppCompatActivity {
 
                                 // TESTING: use this line of code if you wish to by passed Completed Tasks
                                 documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
+                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel3.getText().toString()));
                                 Intent intent = new Intent(TasksOptionsActivity3Health.this, TaskScreenActivity3Health1Exercise.class);
                                 startActivity(intent);
                             }

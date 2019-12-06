@@ -29,7 +29,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TaskScreenActivity extends AppCompatActivity {
+public class TaskScreenActivity4Hobbies2Video extends AppCompatActivity {
 
     ImageButton home;
     ImageButton option1;
@@ -53,7 +53,7 @@ public class TaskScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_taskscreen);
+        setContentView(R.layout.activity_taskscreen4hobbies2video);
 
 //        home = (ImageButton)findViewById(R.id.home);
         tasklabel = (TextView)findViewById(R.id.tasklabel);
@@ -96,27 +96,27 @@ public class TaskScreenActivity extends AppCompatActivity {
                             if(document.exists()){
                                 currentLabel=label1;
                                 documentReference.update("fOption", FieldValue.arrayUnion(currentLabel.getText() + "\n At  " + currentTime.toString()));
-                                documentReference.update("fCurrentBalance", FieldValue.arrayUnion(Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 100)));
-                                documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 100));
-                                documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) + 20));
+                                documentReference.update("fCurrentBalance", FieldValue.arrayUnion(Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 2)));
+                                documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 2));
+                                documentReference.update("fHobbies", Integer.toString(Integer.parseInt(document.get("fHobbies").toString()) + 3));
                                 documentReference.update("fSocial", Integer.toString(Integer.parseInt(document.get("fSocial").toString()) - 0));
                                 documentReference.update("fHealth", Integer.toString(Integer.parseInt(document.get("fHealth").toString()) - 0))
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {
-                                                Toast.makeText(TaskScreenActivity.this, "Updated Successfully",
+                                                Toast.makeText(TaskScreenActivity4Hobbies2Video.this, "Updated Successfully",
                                                         Toast.LENGTH_SHORT).show();
                                             }
                                         }).addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(TaskScreenActivity.this, "Unable to Update",
+                                        Toast.makeText(TaskScreenActivity4Hobbies2Video.this, "Unable to Update",
                                                 Toast.LENGTH_SHORT).show();
                                     }
                                 }).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
-                                        Intent intent = new Intent(TaskScreenActivity.this, LearningScreenActivity.class);
+                                        Intent intent = new Intent(TaskScreenActivity4Hobbies2Video.this, LearningScreenActivity4Hobbies2Video.class);
                                         startActivity(intent);
                                     }
                                 });
@@ -143,27 +143,27 @@ public class TaskScreenActivity extends AppCompatActivity {
                             if(document.exists()){
                                 currentLabel=label2;
                                 documentReference.update("fOption", FieldValue.arrayUnion(currentLabel.getText() + "\n At  " + currentTime.toString()));
-                                documentReference.update("fCurrentBalance", FieldValue.arrayUnion(Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 2)));
-                                documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 2));
-                                documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) + 10));
+                                documentReference.update("fCurrentBalance", FieldValue.arrayUnion(Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 20)));
+                                documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 20));
+                                documentReference.update("fHobbies", Integer.toString(Integer.parseInt(document.get("fHobbies").toString()) + 5));
                                 documentReference.update("fSocial", Integer.toString(Integer.parseInt(document.get("fSocial").toString()) - 0));
-                                documentReference.update("fHealth", Integer.toString(Integer.parseInt(document.get("fHealth").toString()) - 0))
+                                documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) - 3))
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {
-                                                Toast.makeText(TaskScreenActivity.this, "Updated Successfully",
+                                                Toast.makeText(TaskScreenActivity4Hobbies2Video.this, "Updated Successfully",
                                                         Toast.LENGTH_SHORT).show();
                                             }
                                         }).addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(TaskScreenActivity.this, "Unable to Update",
+                                        Toast.makeText(TaskScreenActivity4Hobbies2Video.this, "Unable to Update",
                                                 Toast.LENGTH_SHORT).show();
                                     }
                                 }).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
-                                        Intent intent = new Intent(TaskScreenActivity.this, LearningScreenActivity.class);
+                                        Intent intent = new Intent(TaskScreenActivity4Hobbies2Video.this, LearningScreenActivity4Hobbies2Video.class);
                                         startActivity(intent);
                                     }
                                 });
@@ -192,25 +192,25 @@ public class TaskScreenActivity extends AppCompatActivity {
                                 documentReference.update("fOption", FieldValue.arrayUnion(currentLabel.getText() + "\n At  " + currentTime.toString()));
                                 documentReference.update("fCurrentBalance", FieldValue.arrayUnion(Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 1)));
                                 documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 1));
-                                documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) + 10));
-                                documentReference.update("fSocial", Integer.toString(Integer.parseInt(document.get("fSocial").toString()) + 5));
-                                documentReference.update("fHealth", Integer.toString(Integer.parseInt(document.get("fHealth").toString()) - 0))
+                                documentReference.update("fHobbies", Integer.toString(Integer.parseInt(document.get("fHobbies").toString()) + 4));
+                                documentReference.update("fSocial", Integer.toString(Integer.parseInt(document.get("fSocial").toString()) + 0));
+                                documentReference.update("fHealth", Integer.toString(Integer.parseInt(document.get("fHealth").toString()) - 1))
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {
-                                                Toast.makeText(TaskScreenActivity.this, "Updated Successfully",
+                                                Toast.makeText(TaskScreenActivity4Hobbies2Video.this, "Updated Successfully",
                                                         Toast.LENGTH_SHORT).show();
                                             }
                                         }).addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(TaskScreenActivity.this, "Unable to Update",
+                                        Toast.makeText(TaskScreenActivity4Hobbies2Video.this, "Unable to Update",
                                                 Toast.LENGTH_SHORT).show();
                                     }
                                 }).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
-                                        Intent intent = new Intent(TaskScreenActivity.this, LearningScreenActivity.class);
+                                        Intent intent = new Intent(TaskScreenActivity4Hobbies2Video.this, LearningScreenActivity4Hobbies2Video.class);
                                         startActivity(intent);
                                     }
                                 });

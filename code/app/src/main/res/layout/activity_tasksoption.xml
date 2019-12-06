@@ -77,7 +77,7 @@
                     app:srcCompat="@drawable/ic_laptop" />
 
                 <TextView
-                    android:id="@+id/laptop_label"
+                    android:id="@+id/taskOption2_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignStart="@+id/task2"
@@ -115,7 +115,7 @@
                     app:srcCompat="@drawable/ic_school_supplies" />
 
                 <TextView
-                    android:id="@+id/supplies_label"
+                    android:id="@+id/taskOption3_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignStart="@+id/task3"
@@ -145,7 +145,7 @@
                     app:srcCompat="@drawable/ic_tutor" />
 
                 <TextView
-                    android:id="@+id/tutor_label"
+                    android:id="@+id/taskOption4_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignStart="@+id/task4"

@@ -44,7 +44,7 @@
                     android:layout_alignEnd="@+id/task1"
                     android:layout_alignBottom="@+id/task1"
                     android:layout_marginEnd="10dp"
-                    app:srcCompat="@drawable/ic_physical_examination" />
+                    app:srcCompat="@drawable/ic_game" />
 
                 <TextView
                     android:id="@+id/taskOption1_label"
@@ -57,7 +57,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:textSize="18sp"
-                    android:text="Do Physical Examination" />
+                    android:text="Play Video Game" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/task2"
@@ -74,7 +74,7 @@
                     android:layout_alignEnd="@+id/task2"
                     android:layout_alignBottom="@+id/task2"
                     android:layout_marginEnd="10dp"
-                    app:srcCompat="@drawable/ic_weighingscale" />
+                    app:srcCompat="@drawable/ic_video" />
 
                 <TextView
                     android:id="@+id/taskOption2_label"
@@ -87,7 +87,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:textSize="18sp"
-                    android:text="Buy a Weighing Scale" />
+                    android:text="Watch Video" />
 
             </RelativeLayout>
 
@@ -112,7 +112,7 @@
                     android:layout_alignEnd="@+id/task3"
                     android:layout_alignBottom="@+id/task3"
                     android:layout_marginEnd="10dp"
-                    app:srcCompat="@drawable/ic_exercise" />
+                    app:srcCompat="@drawable/ic_activity" />
 
                 <TextView
                     android:id="@+id/taskOption3_label"
@@ -125,7 +125,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:textSize="18sp"
-                    android:text="Do Exercise" />
+                    android:text="Go to Concert" />
 
 <!--                <androidx.appcompat.widget.AppCompatImageButton-->
 <!--                    android:id="@+id/task4"-->
@@ -133,8 +133,7 @@
 <!--                    android:layout_height="150dp"-->
 <!--                    android:layout_alignParentEnd="true"-->
 <!--                    android:layout_marginEnd="30dp"-->
-<!--                    android:background="@android:color/transparent"-->
-<!--                    app:srcCompat="@drawable/ic_button_gray_150dp" />-->
+<!--                    android:background="@drawable/button_effect_square" />-->
 
 <!--                <ImageView-->
 <!--                    android:id="@+id/imageTask4"-->
@@ -146,7 +145,7 @@
 <!--                    app:srcCompat="@drawable/ic_tutor" />-->
 
 <!--                <TextView-->
-<!--                    android:id="@+id/tutor_label"-->
+<!--                    android:id="@+id/taskOption4_label"-->
 <!--                    android:layout_width="wrap_content"-->
 <!--                    android:layout_height="wrap_content"-->
 <!--                    android:layout_alignStart="@+id/task4"-->
@@ -172,8 +171,7 @@
 <!--                    android:layout_height="150dp"-->
 <!--                    android:layout_alignParentStart="true"-->
 <!--                    android:layout_marginStart="30dp"-->
-<!--                    android:background="@android:color/transparent"-->
-<!--                    app:srcCompat="@drawable/ic_button_gray_150dp" />-->
+<!--                    android:background="@drawable/button_effect_square" />-->
 
 <!--                <ImageView-->
 <!--                    android:id="@+id/imageTask5"-->
@@ -182,10 +180,10 @@
 <!--                    android:layout_alignEnd="@+id/task5"-->
 <!--                    android:layout_alignBottom="@+id/task5"-->
 <!--                    android:layout_marginEnd="10dp"-->
-<!--                    app:srcCompat="@drawable/ic_laptop" />-->
+<!--                    app:srcCompat="@drawable/ic_backpack" />-->
 
 <!--                <TextView-->
-<!--                    android:id="@+id/laptop_label"-->
+<!--                    android:id="@+id/equipment_label"-->
 <!--                    android:layout_width="wrap_content"-->
 <!--                    android:layout_height="wrap_content"-->
 <!--                    android:layout_alignStart="@+id/task5"-->
@@ -195,7 +193,7 @@
 <!--                    android:layout_marginTop="10dp"-->
 <!--                    android:layout_marginEnd="10dp"-->
 <!--                    android:textSize="18sp"-->
-<!--                    android:text="Buy New Laptop" />-->
+<!--                    android:text="Buy Equipment" />-->
 
 <!--                <androidx.appcompat.widget.AppCompatImageButton-->
 <!--                    android:id="@+id/task6"-->
@@ -203,8 +201,7 @@
 <!--                    android:layout_height="150dp"-->
 <!--                    android:layout_alignParentEnd="true"-->
 <!--                    android:layout_marginEnd="30dp"-->
-<!--                    android:background="@android:color/transparent"-->
-<!--                    app:srcCompat="@drawable/ic_button_gray_150dp" />-->
+<!--                    android:background="@drawable/button_effect_square" />-->
 
 <!--                <ImageView-->
 <!--                    android:id="@+id/imageTask6"-->
@@ -242,8 +239,7 @@
 <!--                    android:layout_height="150dp"-->
 <!--                    android:layout_alignParentStart="true"-->
 <!--                    android:layout_marginStart="30dp"-->
-<!--                    android:background="@android:color/transparent"-->
-<!--                    app:srcCompat="@drawable/ic_button_gray_150dp" />-->
+<!--                    android:background="@drawable/button_effect_square" />-->
 
 <!--                <ImageView-->
 <!--                    android:id="@+id/imageTask7"-->
@@ -273,8 +269,7 @@
 <!--                    android:layout_height="150dp"-->
 <!--                    android:layout_alignParentEnd="true"-->
 <!--                    android:layout_marginEnd="30dp"-->
-<!--                    android:background="@android:color/transparent"-->
-<!--                    app:srcCompat="@drawable/ic_button_gray_150dp" />-->
+<!--                    android:background="@drawable/button_effect_square" />-->
 
 <!--                <ImageView-->
 <!--                    android:id="@+id/imageTask8"-->

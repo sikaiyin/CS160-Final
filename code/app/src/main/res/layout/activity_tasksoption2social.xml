@@ -77,7 +77,7 @@
                     app:srcCompat="@drawable/ic_dinner" />
 
                 <TextView
-                    android:id="@+id/equipment_label"
+                    android:id="@+id/taskOption2_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignStart="@+id/task2"
@@ -115,7 +115,7 @@
                     app:srcCompat="@drawable/ic_party" />
 
                 <TextView
-                    android:id="@+id/supplies_label"
+                    android:id="@+id/taskOption3_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignStart="@+id/task3"

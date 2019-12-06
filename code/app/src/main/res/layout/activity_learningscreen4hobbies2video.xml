@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/mainColor"
+    tools:context=".MainActivity">
+
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/learninglabel"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="80dp"-->
+    <!--        android:layout_marginTop="44dp"-->
+    <!--        android:text="Learnings"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/home"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--    <ImageButton-->
+    <!--        android:id="@+id/home"-->
+    <!--        android:layout_width="50dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginStart="30dp"-->
+    <!--        android:layout_marginTop="16dp"-->
+    <!--        android:background="#666666"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tasklabel"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="100dp"-->
+    <!--        android:layout_marginTop="27dp"-->
+    <!--        android:text="Buying Textbooks"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/learninglabel" />-->
+
+    <TextView
+        android:id="@+id/learninglabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Learnings"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    <androidx.appcompat.widget.AppCompatImageButton-->
+    <!--        android:id="@+id/home"-->
+    <!--        android:layout_width="40dp"-->
+    <!--        android:layout_height="40dp"-->
+    <!--        android:layout_marginStart="5dp"-->
+    <!--        android:layout_marginTop="5dp"-->
+    <!--        android:background="@android:color/transparent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:srcCompat="@drawable/ic_home_button_white_40dp"/>-->
+
+    <TextView
+        android:id="@+id/explanation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:text="Key takeaways about watching videos."
+        android:textSize="16sp"
+        android:textColor="@color/darkGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/learninglabel" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageRectangle1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/mainColorTransparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/explanation" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageIcon1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageRectangle1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_download"
+        android:tag="ic_download"/>
+
+    <TextView
+        android:id="@+id/learning1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Free ones will not be the newest one, but they are free."
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageRectangle1"
+        app:layout_constraintEnd_toEndOf="@+id/imageRectangle1"
+        app:layout_constraintStart_toEndOf="@+id/imageBullet1"
+        app:layout_constraintTop_toTopOf="@+id/imageRectangle1" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageBullet1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageRectangle1"
+        app:layout_constraintStart_toStartOf="@+id/imageRectangle1"
+        app:layout_constraintTop_toTopOf="@+id/imageRectangle1"
+        app:srcCompat="@drawable/ic_learningpoint_1" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageRectangle2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/mainColorTransparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageRectangle1" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageIcon2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageRectangle2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_cinema"
+        android:tag="ic_cinema" />
+
+    <TextView
+        android:id="@+id/learning2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Spend some money to enjoy the new movie is also a good option."
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageRectangle2"
+        app:layout_constraintEnd_toEndOf="@id/imageRectangle2"
+        app:layout_constraintStart_toEndOf="@+id/imageBullet2"
+        app:layout_constraintTop_toBottomOf="@+id/imageRectangle2" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageBullet2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageRectangle2"
+        app:layout_constraintStart_toStartOf="@+id/imageRectangle2"
+        app:layout_constraintTop_toTopOf="@+id/imageRectangle2"
+        app:srcCompat="@drawable/ic_learningpoint_2" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageRectangle3"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/mainColorTransparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageRectangle2" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageIcon3"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageRectangle3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_youtube"
+        android:tag="ic_youtube"/>
+
+    <TextView
+        android:id="@+id/learning3"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="On youtube there are also many interesting videos, and they are free."
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageRectangle3"
+        app:layout_constraintEnd_toEndOf="@+id/imageRectangle3"
+        app:layout_constraintStart_toEndOf="@+id/imageBullet3"
+        app:layout_constraintTop_toTopOf="@+id/imageRectangle3" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageBullet3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageRectangle3"
+        app:layout_constraintStart_toStartOf="@+id/imageRectangle3"
+        app:layout_constraintTop_toTopOf="@+id/imageRectangle3"
+        app:srcCompat="@drawable/ic_learningpoint_3" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/home"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_effect_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_home_yellow" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
