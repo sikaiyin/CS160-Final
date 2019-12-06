@@ -109,6 +109,11 @@ public class LearningScreenActivity1Academic3Laptop extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        // do nothing
+    }
 }
 
 

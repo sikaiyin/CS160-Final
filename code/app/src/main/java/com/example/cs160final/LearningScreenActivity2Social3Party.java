@@ -108,6 +108,11 @@ public class LearningScreenActivity2Social3Party extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        // do nothing
+    }
 }
 
 

@@ -72,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference mDatabaseRef;
     private StorageReference mStorageRef;
 
-    TextView bugetamount;
+    TextView budgetamount;
     TextView academicscore;
     TextView socialscore;
-    TextView heathscore;
+    TextView healthscore;
     TextView hobbyscore;
 
 
@@ -106,10 +106,10 @@ public class MainActivity extends AppCompatActivity {
         iventertain = (ImageView)findViewById(R.id.iventertain);
         pbentertain = (ProgressBar)findViewById(R.id.pbentertain);
         performtask = (Button)findViewById(R.id.performtask);
-        bugetamount = (TextView)findViewById(R.id.budgetamount);
+        budgetamount = (TextView)findViewById(R.id.budgetamount);
         academicscore = (TextView)findViewById(R.id.academicscore);
         socialscore = (TextView)findViewById(R.id.socialscore);
-        heathscore = (TextView)findViewById(R.id.healthscore);
+        healthscore = (TextView)findViewById(R.id.healthscore);
         hobbyscore = (TextView)findViewById(R.id.hobbyscore);
 
         fAuth = FirebaseAuth.getInstance();
@@ -178,11 +178,43 @@ public class MainActivity extends AppCompatActivity {
                         pbentertain.setProgress(Integer.parseInt(document.get("fHobbies").toString()));
 
                         // Displaying scores/stats of progress bars for user
-                        bugetamount.setText("$" + (document.get("fBudget").toString()));
+                        budgetamount.setText("$" + (document.get("fBudget").toString()));
                         academicscore.setText(document.get("fAcademics").toString() + "%");
                         socialscore.setText(document.get("fSocial").toString() + "%");
-                        heathscore.setText(document.get("fHealth").toString() + "%");
-                        hobbyscore.setText(document.get("fHobbies").toString() + "%");
+                        healthscore.setText(document.get("fHealth").toString() + "%");
+
+                        // To cap or limit the percentages/scores to 100 and no more than 100
+                        if(Integer.parseInt(document.get("fBudget").toString()) > 1000){
+                            documentReference.update("fBudget", "1000");
+                            budgetamount.setText("$1000");
+                        }else{
+                            budgetamount.setText("$" + (document.get("fBudget").toString()));
+                        }
+
+                        if(Integer.parseInt(document.get("fAcademics").toString()) > 100){
+                            documentReference.update("fAcademics", "100");
+                            academicscore.setText("100%");
+                        }else{
+                            academicscore.setText(document.get("fAcademics").toString() + "%");
+                        }
+                        if(Integer.parseInt(document.get("fSocial").toString()) > 100){
+                            documentReference.update("fSocial", "100");
+                            socialscore.setText("100%");
+                        }else{
+                            socialscore.setText(document.get("fSocial").toString() + "%");
+                        }
+                        if(Integer.parseInt(document.get("fHealth").toString()) > 100){
+                            documentReference.update("fHealth", "100");
+                            healthscore.setText("100%");
+                        }else{
+                            healthscore.setText(document.get("fHealth").toString() + "%");
+                        }
+                        if(Integer.parseInt(document.get("fHobbies").toString()) > 100){
+                            documentReference.update("fHobbies", "100");
+                            hobbyscore.setText("100%");
+                        }else{
+                            hobbyscore.setText(document.get("fHobbies").toString() + "%");
+                        }
 
                     }
                 }
@@ -238,4 +270,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), login.class));
         finish();
     }
+
+    @Override
+    public void onBackPressed() {
+        // do nothing
+    }
+
 }

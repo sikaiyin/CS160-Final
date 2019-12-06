@@ -108,6 +108,11 @@ public class LearningScreenActivity3Health2Examination extends AppCompatActivity
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        // do nothing
+    }
 }
 
 

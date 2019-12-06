@@ -8,6 +8,7 @@ import android.content.Context;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,11 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.jar.Attributes;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class transaction extends AppCompatActivity {
 
@@ -73,9 +78,29 @@ public class transaction extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()){
                     final DocumentSnapshot document = task.getResult();
+
+                    String regex = "\\$\\S+";
+                    String testing = "";
+
                     if(document.exists()) {
                         Names = (List<String>) document.get("fOption");
                         Balances = (List<String>) document.get("fCurrentBalance");
+
+                        // Iterator to traverse the list
+                        Iterator iterator = Names.iterator();
+
+//                        while (iterator.hasNext()) {
+//                            Pattern pattern = Pattern.compile(regex);
+//                            Matcher matcher = pattern.matcher(Names.get(0).toString());
+//                            if (matcher.find())
+//                            {
+//                                testing = matcher.group(0);
+//                            }
+//                        }
+
+                        testing = Names.get(0).replaceFirst(regex,"");
+
+                        Log.d("docs_", testing);
 
                         transaction.MyAdapter adapter = new transaction.MyAdapter(transaction.this, Names, Balances);
                         //MyLearningsAdapter.CustomAdaptor mCustomAdaptor = new MyLearningsAdapter.CustomAdaptor();

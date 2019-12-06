@@ -108,6 +108,11 @@ public class LearningScreenActivity2Social2Dinner extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        // do nothing
+    }
 }
 
 

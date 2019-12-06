@@ -109,6 +109,11 @@ public class LearningScreenActivity1Academic4Supplies extends AppCompatActivity 
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        // do nothing
+    }
 }
 
 

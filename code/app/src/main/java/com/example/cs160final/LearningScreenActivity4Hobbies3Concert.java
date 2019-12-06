@@ -109,6 +109,11 @@ public class LearningScreenActivity4Hobbies3Concert extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        // do nothing
+    }
 }
 
 

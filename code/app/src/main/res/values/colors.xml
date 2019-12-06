@@ -7,6 +7,7 @@
     <color name="mainColor">#5EB9AD</color>
     <color name="mainColorTransparent">#FDDD8A</color>
     <color name="darkGray">#4D4D4D</color>
+    <color name="myGray">#464646</color>
     <color name="lightGray">#E0E0E0</color>
     <color name="lightBlue">#00B0FF</color>
     <color name="blue">#3E8CC7</color>

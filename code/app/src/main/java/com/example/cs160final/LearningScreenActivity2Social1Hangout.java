@@ -108,6 +108,11 @@ public class LearningScreenActivity2Social1Hangout extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        // do nothing
+    }
 }
 
 

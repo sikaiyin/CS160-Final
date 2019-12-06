@@ -108,6 +108,11 @@ public class LearningScreenActivity3Health3Weighing extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        // do nothing
+    }
 }
 
 

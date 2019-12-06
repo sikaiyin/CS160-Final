@@ -19,8 +19,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="153dp"
+            android:layout_height="153dp"
             android:layout_gravity="center"
             app:cardCornerRadius="80dp">
 

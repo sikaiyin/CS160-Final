@@ -109,6 +109,11 @@ public class LearningScreenActivity4Hobbies1Game extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        // do nothing
+    }
 }
 
 

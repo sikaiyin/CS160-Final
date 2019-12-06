@@ -28,25 +28,25 @@
         android:id="@+id/tasklabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
         android:layout_marginTop="20dp"
-        android:text="Task Category for"
+        android:text="Task Category"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/week"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:text="Week 1"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tasklabel"
-        app:layout_constraintStart_toEndOf="@+id/tasklabel"
-        app:layout_constraintTop_toTopOf="@+id/tasklabel" />
+<!--    <TextView-->
+<!--        android:id="@+id/week"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="7dp"-->
+<!--        android:text="Week 1"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/tasklabel"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/tasklabel"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/tasklabel" />-->
 
     <!--    <androidx.appcompat.widget.AppCompatImageButton-->
     android:id="@+id/home"

@@ -153,18 +153,18 @@ public class TasksOptionsActivity3Health extends AppCompatActivity {
                                     builder.show();
 
                                 }
-//                                else {
-//                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-//                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
-//                                    Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity.class);
-//                                    startActivity(intent);
-//                                }
+                                else {
+                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
+                                    Intent intent = new Intent(TasksOptionsActivity3Health.this, TaskScreenActivity3Health2Examination.class);
+                                    startActivity(intent);
+                                }
 
-                                // TESTING: use this line of code if you wish to by passed Completed Tasks
-                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
-                                Intent intent = new Intent(TasksOptionsActivity3Health.this, TaskScreenActivity3Health2Examination.class);
-                                startActivity(intent);
+//                                // TESTING: use this line of code if you wish to by passed Completed Tasks
+//                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+//                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
+//                                Intent intent = new Intent(TasksOptionsActivity3Health.this, TaskScreenActivity3Health2Examination.class);
+//                                startActivity(intent);
                             }
 
                         }
@@ -208,18 +208,18 @@ public class TasksOptionsActivity3Health extends AppCompatActivity {
                                     builder.show();
 
                                 }
-//                                else {
-//                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-//                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
-//                                    Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity.class);
-//                                    startActivity(intent);
-//                                }
+                                else {
+                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel2.getText().toString()));
+                                    Intent intent = new Intent(TasksOptionsActivity3Health.this, TaskScreenActivity3Health3Weighing.class);
+                                    startActivity(intent);
+                                }
 
-                                // TESTING: use this line of code if you wish to by passed Completed Tasks
-                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel2.getText().toString()));
-                                Intent intent = new Intent(TasksOptionsActivity3Health.this, TaskScreenActivity3Health3Weighing.class);
-                                startActivity(intent);
+//                                // TESTING: use this line of code if you wish to by passed Completed Tasks
+//                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+//                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel2.getText().toString()));
+//                                Intent intent = new Intent(TasksOptionsActivity3Health.this, TaskScreenActivity3Health3Weighing.class);
+//                                startActivity(intent);
                             }
 
                         }
@@ -263,18 +263,18 @@ public class TasksOptionsActivity3Health extends AppCompatActivity {
                                     builder.show();
 
                                 }
-//                                else {
-//                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-//                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
-//                                    Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity.class);
-//                                    startActivity(intent);
-//                                }
+                                else {
+                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel3.getText().toString()));
+                                    Intent intent = new Intent(TasksOptionsActivity3Health.this, TaskScreenActivity3Health1Exercise.class);
+                                    startActivity(intent);
+                                }
 
-                                // TESTING: use this line of code if you wish to by passed Completed Tasks
-                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel3.getText().toString()));
-                                Intent intent = new Intent(TasksOptionsActivity3Health.this, TaskScreenActivity3Health1Exercise.class);
-                                startActivity(intent);
+//                                // TESTING: use this line of code if you wish to by passed Completed Tasks
+//                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+//                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel3.getText().toString()));
+//                                Intent intent = new Intent(TasksOptionsActivity3Health.this, TaskScreenActivity3Health1Exercise.class);
+//                                startActivity(intent);
                             }
 
                         }

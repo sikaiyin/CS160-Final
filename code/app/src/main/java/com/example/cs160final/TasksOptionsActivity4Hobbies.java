@@ -127,18 +127,18 @@ public class TasksOptionsActivity4Hobbies extends AppCompatActivity {
                                     builder.show();
 
                                 }
-//                                else {
-//                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-//                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
-//                                    Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity.class);
-//                                    startActivity(intent);
-//                                }
+                                else {
+                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
+                                    Intent intent = new Intent(TasksOptionsActivity4Hobbies.this, TaskScreenActivity4Hobbies1Game.class);
+                                    startActivity(intent);
+                                }
 
-                                 // TESTING: use this line of code if you wish to by passed Completed Tasks
-                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
-                                Intent intent = new Intent(TasksOptionsActivity4Hobbies.this, TaskScreenActivity4Hobbies1Game.class);
-                                startActivity(intent);
+//                                 // TESTING: use this line of code if you wish to by passed Completed Tasks
+//                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+//                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
+//                                Intent intent = new Intent(TasksOptionsActivity4Hobbies.this, TaskScreenActivity4Hobbies1Game.class);
+//                                startActivity(intent);
                             }
 
                         }
@@ -182,18 +182,18 @@ public class TasksOptionsActivity4Hobbies extends AppCompatActivity {
                                     builder.show();
 
                                 }
-//                                else {
-//                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-//                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
-//                                    Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity.class);
-//                                    startActivity(intent);
-//                                }
+                                else {
+                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel2.getText().toString()));
+                                    Intent intent = new Intent(TasksOptionsActivity4Hobbies.this, TaskScreenActivity4Hobbies2Video.class);
+                                    startActivity(intent);
+                                }
 
-                                // TESTING: use this line of code if you wish to by passed Completed Tasks
-                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel2.getText().toString()));
-                                Intent intent = new Intent(TasksOptionsActivity4Hobbies.this, TaskScreenActivity4Hobbies2Video.class);
-                                startActivity(intent);
+//                                // TESTING: use this line of code if you wish to by passed Completed Tasks
+//                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+//                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel2.getText().toString()));
+//                                Intent intent = new Intent(TasksOptionsActivity4Hobbies.this, TaskScreenActivity4Hobbies2Video.class);
+//                                startActivity(intent);
                             }
 
                         }
@@ -237,18 +237,18 @@ public class TasksOptionsActivity4Hobbies extends AppCompatActivity {
                                     builder.show();
 
                                 }
-//                                else {
-//                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-//                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel1.getText().toString()));
-//                                    Intent intent = new Intent(TasksOptionsActivity.this, TaskScreenActivity.class);
-//                                    startActivity(intent);
-//                                }
+                                else {
+                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel3.getText().toString()));
+                                    Intent intent = new Intent(TasksOptionsActivity4Hobbies.this, TaskScreenActivity4Hobbies3Concert.class);
+                                    startActivity(intent);
+                                }
 
-                                // TESTING: use this line of code if you wish to by passed Completed Tasks
-                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel3.getText().toString()));
-                                Intent intent = new Intent(TasksOptionsActivity4Hobbies.this, TaskScreenActivity4Hobbies3Concert.class);
-                                startActivity(intent);
+//                                // TESTING: use this line of code if you wish to by passed Completed Tasks
+//                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+//                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel3.getText().toString()));
+//                                Intent intent = new Intent(TasksOptionsActivity4Hobbies.this, TaskScreenActivity4Hobbies3Concert.class);
+//                                startActivity(intent);
                             }
 
                         }
