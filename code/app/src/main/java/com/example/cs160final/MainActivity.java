@@ -1,13 +1,16 @@
 package com.example.cs160final;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -215,6 +218,7 @@ public class MainActivity extends AppCompatActivity {
                         }else{
                             hobbyscore.setText(document.get("fHobbies").toString() + "%");
                         }
+                        Log.d("month_week_count", Counter);
 
                     }
                 }
@@ -243,8 +247,97 @@ public class MainActivity extends AppCompatActivity {
         performtask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
-                startActivity(intent);
+                // Game rules pop-up
+                if (Counter.equals("0")) {
+
+                    int videoGameUnicode = 0x1F3AE;
+
+                    // Pop-up message when a task is selected and provide user feedback that it has been completed
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                    builder.setCancelable(false);
+
+                    ImageView image = new ImageView(MainActivity.this);
+                    image.setImageResource(R.drawable.ic_gamerules);
+
+                    builder.setTitle(new String(Character.toChars(videoGameUnicode)) + " Game Rules " + new String(Character.toChars(videoGameUnicode)));
+                    builder.setMessage("1. Completing 2 tasks advances you to the next week. \n\n" +
+                            "2. Midterm week: Month 2, Week 4 \n\n" + "3. Finals week: Month 4, Week 4 \n\n" +
+                            "4. During exam week, any tasks in the non-Academic category that decrement Academic score will be doubled. \n");
+
+
+                    builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                            Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    builder.setView(image);
+                    builder.show();
+                }
+                // Midterm week pop-up
+                else if (Counter.equals("14") || Counter.equals("15")) {
+
+                    int videoGameUnicode = 0x1F640;
+
+                    // Pop-up message when a task is selected and provide user feedback that it has been completed
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                    builder.setCancelable(false);
+
+                    ImageView image = new ImageView(MainActivity.this);
+                    image.setImageResource(R.drawable.ic_exam);
+
+                    builder.setTitle(new String(Character.toChars(videoGameUnicode)) + " MIDTERM WEEK " + new String(Character.toChars(videoGameUnicode)));
+                    builder.setMessage("For this week, any tasks in the non-Academic category that decrement Academic score will be doubled. \n");
+
+
+                    builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                            Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    builder.setView(image);
+                    builder.show();
+                }
+                // Final week pop-up
+                else if (Counter.equals("30") || Counter.equals("31")) {
+
+                    int videoGameUnicode = 0x1F640;
+
+                    // Pop-up message when a task is selected and provide user feedback that it has been completed
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                    builder.setCancelable(false);
+
+                    ImageView image = new ImageView(MainActivity.this);
+                    image.setImageResource(R.drawable.ic_exam);
+
+                    builder.setTitle(new String(Character.toChars(videoGameUnicode)) + " FINALS WEEK " + new String(Character.toChars(videoGameUnicode)));
+                    builder.setMessage("For this week, any tasks in the non-Academic category that decrement Academic score will be doubled. \n");
+
+
+                    builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                            Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    builder.setView(image);
+                    builder.show();
+                }
+                // Any other week that is not week 0, Midterm week, and Finals week
+                else {
+                    Intent intent = new Intent(MainActivity.this, CategoryActivity.class);
+                    startActivity(intent);
+                }
             }
         });
         myspendings.setOnClickListener(new View.OnClickListener() {

@@ -263,18 +263,18 @@ public class TasksOptionsActivity2Social extends AppCompatActivity {
                                     builder.show();
 
                                 }
-                                else {
-                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel3.getText().toString()));
-                                    Intent intent = new Intent(TasksOptionsActivity2Social.this, TaskScreenActivity2Social3Party.class);
-                                    startActivity(intent);
-                                }
+//                                else {
+//                                    documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+//                                    documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel3.getText().toString()));
+//                                    Intent intent = new Intent(TasksOptionsActivity2Social.this, TaskScreenActivity2Social3Party.class);
+//                                    startActivity(intent);
+//                                }
 
-//                                // TESTING: use this line of code if you wish to by passed Completed Tasks
-//                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
-//                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel3.getText().toString()));
-//                                Intent intent = new Intent(TasksOptionsActivity2Social.this, TaskScreenActivity2Social3Party.class);
-//                                startActivity(intent);
+                                // TESTING: use this line of code if you wish to by passed Completed Tasks
+                                documentReference.update("fWeekCounter", Integer.toString(Integer.parseInt(document.get("fWeekCounter").toString()) + 1));
+                                documentReference.update("fTaskList", FieldValue.arrayUnion(tasklabel3.getText().toString()));
+                                Intent intent = new Intent(TasksOptionsActivity2Social.this, TaskScreenActivity2Social3Party.class);
+                                startActivity(intent);
                             }
 
                         }

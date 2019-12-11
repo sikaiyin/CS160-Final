@@ -50,6 +50,8 @@ public class TaskScreenActivity4Hobbies3Concert extends AppCompatActivity {
     ImageButton optionSelected;
     TextView currentLabel;
 
+    String Counter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,7 +101,18 @@ public class TaskScreenActivity4Hobbies3Concert extends AppCompatActivity {
                                 documentReference.update("fCurrentBalance", FieldValue.arrayUnion(Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 100)));
                                 documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 100));
                                 documentReference.update("fHobbies", Integer.toString(Integer.parseInt(document.get("fHobbies").toString()) + 8));
-                                documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) - 3));
+
+                                // Note: when user makes a selection prior to this class, Counter has already been increased thus check for increment of 1
+                                // E.g. if Counter = 13, 14 implies Midterm week, then check for Counter = 15, 16
+                                Counter = document.get("fWeekCounter").toString();
+                                Log.d("month_week_Social", Counter);
+                                if (Counter.equals("15") || Counter.equals("16") || Counter.equals("30") || Counter.equals("31")) {
+                                    Log.d("month_week_Doubled", Counter);
+                                    documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) - 2*3));
+                                } else {
+                                    documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) - 3));
+                                }
+
                                 documentReference.update("fHealth", Integer.toString(Integer.parseInt(document.get("fHealth").toString()) - 0))
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
@@ -147,7 +160,19 @@ public class TaskScreenActivity4Hobbies3Concert extends AppCompatActivity {
                                 documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 300));
                                 documentReference.update("fHobbies", Integer.toString(Integer.parseInt(document.get("fHobbies").toString()) + 8));
                                 documentReference.update("fSocial", Integer.toString(Integer.parseInt(document.get("fSocial").toString()) - 0));
-                                documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) - 3))
+
+                                // Note: when user makes a selection prior to this class, Counter has already been increased thus check for increment of 1
+                                // E.g. if Counter = 13, 14 implies Midterm week, then check for Counter = 15, 16
+                                Counter = document.get("fWeekCounter").toString();
+                                Log.d("month_week_Social", Counter);
+                                if (Counter.equals("15") || Counter.equals("16") || Counter.equals("30") || Counter.equals("31")) {
+                                    Log.d("month_week_Doubled", Counter);
+                                    documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) - 2*3));
+                                } else {
+                                    documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) - 3));
+                                }
+
+                                documentReference.update("fHealth", Integer.toString(Integer.parseInt(document.get("fHealth").toString()) - 0))
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {
@@ -194,7 +219,19 @@ public class TaskScreenActivity4Hobbies3Concert extends AppCompatActivity {
                                 documentReference.update("fBudget", Integer.toString(Integer.parseInt(document.get("fBudget").toString()) - 5));
                                 documentReference.update("fHobbies", Integer.toString(Integer.parseInt(document.get("fHobbies").toString()) + 5));
                                 documentReference.update("fSocial", Integer.toString(Integer.parseInt(document.get("fSocial").toString()) + 0));
-                                documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) - 3))
+
+                                // Note: when user makes a selection prior to this class, Counter has already been increased thus check for increment of 1
+                                // E.g. if Counter = 13, 14 implies Midterm week, then check for Counter = 15, 16
+                                Counter = document.get("fWeekCounter").toString();
+                                Log.d("month_week_Social", Counter);
+                                if (Counter.equals("15") || Counter.equals("16") || Counter.equals("30") || Counter.equals("31")) {
+                                    Log.d("month_week_Doubled", Counter);
+                                    documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) - 2*3));
+                                } else {
+                                    documentReference.update("fAcademics", Integer.toString(Integer.parseInt(document.get("fAcademics").toString()) - 3));
+                                }
+
+                                documentReference.update("fHealth", Integer.toString(Integer.parseInt(document.get("fHealth").toString()) - 0))
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {

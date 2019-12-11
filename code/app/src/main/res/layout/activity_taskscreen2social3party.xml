@@ -102,13 +102,13 @@
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@+id/option1_icon"
         app:layout_constraintTop_toBottomOf="@+id/option1_icon"
-        app:srcCompat="@drawable/ic_hobbies" />
+        app:srcCompat="@drawable/ic_academic" />
 
     <TextView
         android:id="@+id/option1_points2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+5 points"
+        android:text="-2 points"
         android:textSize="16sp"
         android:layout_marginStart="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/option1_icon2"
@@ -176,13 +176,13 @@
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@+id/option2_icon"
         app:layout_constraintTop_toBottomOf="@+id/option2_icon"
-        app:srcCompat="@drawable/ic_hobbies" />
+        app:srcCompat="@drawable/ic_academic" />
 
     <TextView
         android:id="@+id/option2_points2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+8 points"
+        android:text="-10 points"
         android:textSize="16sp"
         android:layout_marginStart="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/option2_icon2"
@@ -215,11 +215,12 @@
         android:id="@+id/option3_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:text="Go to know new friends \n $50"
+        android:text="Get to know new friends \n $50"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:layout_marginStart="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/option3"
         app:layout_constraintStart_toEndOf="@+id/imageOption3"
         app:layout_constraintTop_toTopOf="@+id/option3" />
 
@@ -250,13 +251,13 @@
         android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="@+id/option3_icon"
         app:layout_constraintTop_toBottomOf="@+id/option3_icon"
-        app:srcCompat="@drawable/ic_hobbies" />
+        app:srcCompat="@drawable/ic_academic" />
 
     <TextView
         android:id="@+id/option3_points2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+5 points"
+        android:text="-5 points"
         android:textSize="16sp"
         android:layout_marginStart="5dp"
         app:layout_constraintBottom_toBottomOf="@+id/option3_icon2"
