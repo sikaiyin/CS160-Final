@@ -1,8 +1,8 @@
 # CS160-Final
 Spare Change Android App for CS160
 
-## Login
-Email: elephant@berkeley.edu  Password: elephant
+## Goal
+Simulated personal finance choices in a gaming format for high school students.
 
-## Upload Photos
-At registeration page, click on settings button to select photo from phone gallery, the user profile image will be changed accrodingly.
+## Stack Architecture
+Deveolpment on Android Studio in Java, and powered by visual design from Adobe Illustrator and Google Firebase cloud store.
